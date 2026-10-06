@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_myprofile"
+            android:icon="@mipmap/ic_menu_profile"
+            android:title="@string/nav_myprofile" />
+
+        <item
+            android:id="@+id/nav_yourjobs"
+            android:icon="@drawable/ic_nav_history"
+            android:title="@string/nav_yourjobs" />
+
+        <item
+            android:id="@+id/nav_ongoingjob"
+            android:icon="@drawable/ic_nav_ongoing_job"
+            android:title="@string/nav_ongoingjob" />
+
+        <item
+            android:id="@+id/nav_subscription_plans"
+            android:icon="@drawable/ic_round_local_offer_24"
+            android:title="@string/nav_mymembership_not" />
+
+        <item
+            android:id="@+id/nav_mywallet"
+            android:icon="@mipmap/ic_menu_wallet"
+            android:title="@string/nav_mywallet"
+            android:visible="true" />
+
+        <item
+            android:id="@+id/nav_managedocument"
+            android:icon="@mipmap/ic_menu_doc"
+            android:visible="false"
+            android:title="@string/nav_managedocument" />
+
+        <item
+            android:id="@+id/menu_finger"
+            android:icon="@drawable/ic_round_fingerprint_24"
+            android:title="@string/biometrics" />
+        <item
+            android:id="@+id/nav_emergencycontact"
+            android:icon="@mipmap/ic_menu_emergency"
+            android:visible="false"
+            android:title="@string/nav_emergencycontact" />
+
+        <item
+            android:id="@+id/nav_invitefriends"
+            android:icon="@mipmap/ic_menu_invite"
+            android:title="@string/nav_invitefriends" />
+
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/notification"
+            android:title="@string/nav_notification" />
+
+        <item
+            android:id="@+id/nav_support"
+            android:icon="@mipmap/ic_menu_support"
+            android:title="@string/nav_support" />
+
+        <item
+            android:id="@+id/nav_language"
+            android:visible="false"
+            android:icon="@drawable/ic_nav_language"
+            android:title="@string/nav_language" />
+
+        <item
+            android:id="@+id/nav_currency"
+            android:icon="@drawable/ic_nav_currency"
+            android:visible="false"
+            android:title="@string/settings_currency_hint" />
+
+        <item
+            android:id="@+id/nav_my_event_booking"
+            android:icon="@drawable/ic_nav_setting"
+            android:title="@string/my_booking_title" />
+
+        <item
+            android:id="@+id/nav_sample1"
+            android:title="" />
+    </group>
+</menu>

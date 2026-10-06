@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_content_view_document_upload"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_document_upload"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_toolbar_gradient">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_document_upload"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_signin"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_document_upload"
+                    android:layout_alignBottom="@+id/imgbtn_document_upload"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_toStartOf="@+id/btn_edit_"
+                    android:layout_toEndOf="@+id/imgbtn_document_upload"
+                    android:gravity="center"
+                    android:text="@string/manage_document_title"
+                    tools:ignore="MissingPrefix" />
+
+                <ImageView
+                    android:id="@+id/btn_edit_"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/todo"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_refresh_black_24dp"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:id="@+id/txt_category_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar_document_upload"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/please_upload_all_documents_to_proceed_further"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/rl_parent_doc_upld"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_below="@+id/txt_category_"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_rect_border"
+            android:paddingStart="5dp"
+            android:paddingEnd="2dp"
+            android:visibility="gone">
+
+            <Spinner
+                android:id="@+id/sp_category_setup"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:overlapAnchor="false"
+                android:spinnerMode="dropdown" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar_spinner"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:visibility="gone" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_label_category"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.4dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_document"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rl_abov"
+            android:layout_below="@+id/txt_category_"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="10dp"
+            android:padding="2dp"
+            android:visibility="visible"
+            tools:listitem="@layout/adapter_document_upload_view" />
+
+        <LinearLayout
+            android:id="@+id/ll_noresult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:alpha="0.7"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/no_record_found"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_bottom_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:paddingBottom="15dp"
+            android:visibility="gone">
+
+            <com.instaguard.user.CustomViews.CustomButton
+                android:id="@+id/btn_confirm_document_upload"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_rect_filled_colorprimary"
+                android:gravity="center"
+                android:text="@string/add_documents"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                tools:targetApi="m" />
+
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_alreadysignin1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:padding="5sp"
+                android:textAllCaps="true"
+                android:visibility="gone"
+                tools:targetApi="m" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_abov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="5dp"
+            android:padding="5dp">
+
+            <CheckBox
+                android:id="@+id/cb_i_agree_documents_norms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:buttonTint="@color/holo_red_dark"
+                android:text="@string/i_agree_to_the_read_documents_norms"
+                android:textColor="@color/holo_red_dark" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_progressBar_doc_up"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progressBar_doc_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminateTint="@color/black"
+                android:progressTint="@color/gray_light"
+                android:secondaryProgressTint="@color/gray_very_light"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

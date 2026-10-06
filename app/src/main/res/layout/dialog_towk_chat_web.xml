@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ededed">
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar_job_inprogress"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_toolbar_gradient">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imgbtn_back"
+                style="@style/AppThemeToolBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:padding="10dp"
+                android:src="@drawable/ic_close_black" />
+
+            <ImageButton
+                android:id="@+id/imgbtn_backs"
+                style="@style/AppThemeToolBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_whitearrow"
+                android:visibility="invisible" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/textView_support"
+                style="@style/AppThemeToolBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imgbtn_backs"
+                android:layout_alignBottom="@+id/imgbtn_backs"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_toStartOf="@+id/imgbtn_backs"
+                android:layout_toEndOf="@+id/imgbtn_back"
+                android:gravity="center"
+                android:text="@string/support_header"
+                android:textAllCaps="true"
+                tools:ignore="MissingPrefix" />
+
+
+        </RelativeLayout>
+    </android.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/webLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_job_inprogress">
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_job_inprogress"
+        android:background="#8AEDEDED">
+
+        <ProgressBar
+            android:id="@+id/progressBa_r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/black"
+            android:progressTint="@color/black"
+            android:secondaryProgressTint="@color/black" />
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</RelativeLayout>

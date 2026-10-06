@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <android.widget.Toolbar
+            android:id="@+id/toolbar_signupotp"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_toolbar_gradient">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:background="@null"
+                    style="@style/AppThemeToolBar"
+                    android:contentDescription="@string/todo"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_backs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow"
+                    android:visibility="invisible" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_back"
+                    android:layout_alignBottom="@+id/imgbtn_back"
+                    android:layout_marginStart="0dp"
+                    android:layout_toStartOf="@+id/imgbtn_backs"
+                    android:layout_toEndOf="@+id/imgbtn_back"
+                    android:gravity="center"
+                    android:text="@string/upload_picture"
+                    style="@style/AppThemeToolBar"
+                    tools:ignore="MissingPrefix" />
+
+            </RelativeLayout>
+        </android.widget.Toolbar>
+
+        <com.instaguard.user.CustomViews.CustomButton
+            android:id="@+id/btntake_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_rect_border"
+            android:text="@string/take_photo"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorPrimaryDark"
+            android:visibility="visible" />
+
+
+        <com.instaguard.user.CustomViews.CustomButton
+            android:id="@+id/btnchoose_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_rect_border"
+            android:text="@string/choose_photo"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</RelativeLayout>

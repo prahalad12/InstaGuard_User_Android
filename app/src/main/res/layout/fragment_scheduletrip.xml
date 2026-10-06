@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_schedule_date_select"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white">
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar_scheduletrip"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_toolbar_gradient">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imgbtn_back_scheduletrip"
+                style="@style/AppThemeToolBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_whitearrow"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/imgbtn_backs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@null"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_whitearrow"
+                android:visibility="invisible"
+                tools:ignore="ContentDescription" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_scheduletrip_header"
+                style="@style/AppThemeToolBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imgbtn_backs"
+                android:layout_alignBottom="@+id/imgbtn_backs"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_toStartOf="@+id/imgbtn_backs"
+                android:layout_toEndOf="@+id/imgbtn_back_scheduletrip"
+                android:gravity="start|center"
+                android:text="@string/header_scheduletrip_txt"
+                tools:ignore="MissingPrefix,RtlHardcoded" />
+
+        </RelativeLayout>
+
+
+    </android.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/bottom_shadow"
+        android:layout_below="@+id/toolbar_scheduletrip">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_header_address_label"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40.0dip"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:padding="10.0dip"
+                    android:text="@string/pickup_location"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_customer_location"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10.0dip"
+                    android:text="Address"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_header_drop"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_header_drop_address_label"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40.0dip"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="start|center"
+                    android:paddingStart="10.0dip"
+                    android:text="@string/drop_off_location"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_drop_location"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:paddingStart="10.0dip"
+                    android:paddingTop="10.0dip"
+                    android:paddingBottom="10.0dip"
+                    android:text="Address"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_view_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    android:id="@+id/view_image_slider"
+                    layout="@layout/layout_image_slider_main"
+                    android:visibility="visible" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_emptyview_announcement"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_very_light"
+                        android:contentDescription="@string/todo" />
+
+                    <ImageView
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerInParent="true"
+                        android:layout_centerHorizontal="true"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/logo_circle" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/empty_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:visibility="visible" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_book_a_guard"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10.0dip"
+                android:text="@string/book_a_guard"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_month"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:padding="10.0dip"
+                android:text="@string/select_date_and_time_start"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_month"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_pickup_date"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="4dp">
+
+                    <LinearLayout
+                        android:id="@+id/rl_pickup_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <ImageView
+                            android:id="@+id/iv_date_range"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:contentDescription="@string/todo"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_date_range_black_24dp" />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txtlabel_pickup_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="@string/start_date"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txt_pickup_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:text="@string/scheduled_trip_select_start_date"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_pickup_time"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="4dp">
+
+                    <LinearLayout
+                        android:id="@+id/rl_pickup_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <ImageView
+                            android:id="@+id/iv_time_range"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:contentDescription="@string/todo"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_access_time_black_24dp" />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txtlabel_pickup_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="@string/start_time"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txt_pickup_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:text="@string/scheduled_trip_select_start_time"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_month_end"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dp"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:padding="10.0dip"
+                android:text="@string/select_date_and_time_end"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_pickup_date_end"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="4dp">
+
+                    <LinearLayout
+                        android:id="@+id/rl_pickup_date_end"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <ImageView
+                            android:id="@+id/iv_date_range_end"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:contentDescription="@string/todo"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_date_range_black_24dp" />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txtlabel_pickup_date_end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="@string/end_date"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txt_pickup_date_end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:text="@string/scheduled_trip_select_end_date"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_pickup_time_end"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="4dp">
+
+                    <LinearLayout
+                        android:id="@+id/rl_pickup_time_end"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <ImageView
+                            android:id="@+id/iv_time_range_end"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:contentDescription="@string/todo"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_access_time_black_24dp" />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txtlabel_pickup_time_end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="@string/end_time"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txt_pickup_time_end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:text="@string/scheduled_trip_select_end_time"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_timesslot"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="5.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginEnd="5.0dip"
+                android:background="@color/white"
+                android:scrollbarFadeDuration="0"
+                android:scrollbars="vertical"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/footer"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10.0dip"
+                android:orientation="horizontal">
+
+                <com.instaguard.user.CustomViews.CustomButton
+                    android:id="@+id/btn_continue_scheduletrip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/bg_rect_filled_colorprimary"
+                    android:text="@string/dialog_scheduletrip_continue"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <FrameLayout
+        android:id="@+id/frame_schedule_trip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

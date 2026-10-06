@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardElevation="6dp"
+        android:background="@color/white"
+        app:cardBackgroundColor="@color/white">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp"
+                android:src="@mipmap/ic_launcher_round" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_accept"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="start|center|center_horizontal|center_vertical"
+                android:text="@string/map_accept_provider_booking_accepted"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_header"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="start|center|center_horizontal|center_vertical"
+                android:maxLines="2"
+                android:text="@string/map_accept_provider_driver_has_accepted_your_request_and_arriving_at_your_location_you_can_check_the_status_by_tapping_below_button"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+
+                />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_description"
+                android:layout_centerInParent="true"
+                android:layout_margin="0dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="end"
+                    android:padding="10dp"
+                    android:text="@string/ok"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14dp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toStartOf="@+id/txt_ok"
+                    android:gravity="end"
+                    android:padding="10dp"
+                    android:text="@string/map_accept_provider_cancel"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14dp"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

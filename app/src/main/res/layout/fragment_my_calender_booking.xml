@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/bg_gray_common"
+        android:orientation="vertical">
+
+        <android.widget.Toolbar
+            android:id="@+id/toolbar_setting"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@drawable/bg_toolbar_gradient">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/textView"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_back"
+                    android:layout_alignBottom="@+id/imgbtn_back"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_toStartOf="@+id/iv_menu_profile"
+                    android:layout_toEndOf="@+id/imgbtn_back"
+                    android:foregroundGravity="center"
+                    android:gravity="center|start"
+                    android:text="@string/my_booking_title"
+                    tools:ignore="MissingPrefix" />
+
+                <ImageView
+                    android:id="@+id/iv_menu_profile"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_back"
+                    android:layout_alignBottom="@+id/imgbtn_back"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="top|right"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="@string/todo"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_refresh_black_24dp"
+                    android:visibility="visible"
+                    tools:ignore="RtlHardcoded" />
+
+            </RelativeLayout>
+
+        </android.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar_setting">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <WebView
+                    android:id="@+id/webView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <CalendarView
+                    android:id="@+id/calendar_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <!-- <com.applandeo.materialcalendarview.CalendarView
+                     android:id="@+id/calendarView"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:visibility="gone"
+                     app:eventsEnabled="true"
+                     app:headerColor="@color/colorPrimary"
+                     app:headerLabelColor="@color/white"
+                     app:swipeEnabled="true" />-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_user_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:id="@+id/txt_no_data_found"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ic_circle_color_gray"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/colorPrimary"
+            android:padding="10dp"
+            android:progressTint="@color/colorPrimary"
+            android:visibility="visible"
+            tools:targetApi="lollipop" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar_registerotp"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_toolbar_gradient">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imgbtn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                style="@style/AppThemeToolBar"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_whitearrow" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imgbtn_back"
+                android:layout_alignBottom="@+id/imgbtn_back"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="0dp"
+                android:layout_toStartOf="@+id/iv_menu_profile"
+                android:layout_toEndOf="@+id/imgbtn_back"
+                android:foregroundGravity="center"
+                android:gravity="center|start"
+                android:text="@string/account_verification_title_text"
+                style="@style/AppThemeToolBar"
+                tools:ignore="MissingPrefix" />
+
+            <ImageView
+                android:id="@+id/iv_menu_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="top|right"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_menu_vertical"
+                android:contentDescription="@string/todo"
+                android:padding="5dp"
+                android:visibility="invisible"
+                tools:ignore="RtlHardcoded" />
+
+        </RelativeLayout>
+
+    </android.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_registerotp"
+        android:background="@color/bg_gray_common">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <LinearLayout
+                    android:id="@+id/ll_mobile_verification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                     android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_mobiletitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="@string/account_verification_mobile_verifcation_title"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="@color/colorPrimary" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_mobilecontent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="@string/account_verification_we_have_sent_you_the_code_on_your_mobile_number_please_enter_it_below_to_verify_mobile_content"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="@color/black" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txt_mobileview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:drawableStart="@drawable/ic_smartphone"
+                            android:gravity="center"
+                            android:text="@string/account_verification_sms_sent_to_text"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            android:textColor="@color/black" />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txt_mobilenum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/txt_mobileview"
+                            android:layout_alignTop="@+id/txt_mobileview"
+                            android:layout_gravity="center"
+                            android:layout_margin="5dp"
+                            android:layout_toEndOf="@+id/txt_mobileview"
+                            android:gravity="center"
+                            android:text="9876543210"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/black" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlotppage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <com.instaguard.user.CustomViews.CustomEditText
+                            android:id="@+id/edt_otp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="15dp"
+                            android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                            android:hint="@string/account_verification_enter_code_here_hint"
+                            android:inputType="textEmailAddress"
+                            android:paddingEnd="10dp"
+                            android:singleLine="true"
+                            app:met_floatingLabel="highlight"
+                            app:met_floatingLabelAlwaysShown="false"
+                            app:met_floatingLabelAnimating="true"
+                            app:met_textColorHint="@color/colorPrimary"
+                            tools:ignore="RtlSymmetry" />
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/edt_otp"
+                            android:layout_margin="0dp"
+                            android:orientation="horizontal">
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/txt_resendotp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginTop="5dp"
+                                android:foregroundGravity="center"
+                                android:gravity="end"
+                                android:padding="5dp"
+                                android:text="@string/account_verification_resend_sms_text"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorPrimary"
+                                tools:ignore="MissingPrefix,RelativeOverlap,RtlHardcoded" />
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/txt_editmobile_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="5dp"
+                                android:foregroundGravity="center"
+                                android:gravity="end"
+                                android:padding="5dp"
+                                android:text="@string/account_verification_edit_number_text"
+                                android:visibility="gone"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorPrimary"
+                                tools:ignore="MissingPrefix,RelativeOverlap,RtlHardcoded" />
+
+
+                            <View
+                                android:id="@+id/view"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_below="@+id/txt_resendotp"
+                                android:background="@android:color/darker_gray"
+                                android:visibility="visible" />
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/btn_confirmsignupotp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/view"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/bg_rect_filled_colorprimary"
+                                android:foregroundGravity="center"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="@string/account_verification_submit_text"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                tools:ignore="MissingPrefix,RelativeOverlap,RtlHardcoded" />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    tools:ignore="SmallSp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_email_verification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                     android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_emailtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="@string/account_verification_email_verifcation_title"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="@color/colorPrimary" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_emailcontent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="@string/account_verification_we_have_sent_you_the_code_on_your_registered_email_account_please_enter_it_below_to_verify_email_content"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="@color/black" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_email_otppage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <com.instaguard.user.CustomViews.CustomEditText
+                            android:id="@+id/edt_emailotp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="15dp"
+                            android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                            android:hint="@string/account_verification_enter_code_here_email_hint"
+                            android:inputType="textEmailAddress"
+                            android:paddingEnd="10dp"
+                            android:singleLine="true"
+                            app:met_floatingLabel="highlight"
+                            app:met_floatingLabelAlwaysShown="false"
+                            app:met_floatingLabelAnimating="true"
+                            app:met_textColorHint="@color/colorPrimary"
+                            tools:ignore="RtlSymmetry" />
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/edt_emailotp"
+                            android:layout_margin="0dp"
+                            android:orientation="horizontal">
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/btn_emailconfirmsignupotp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/bg_rect_filled_colorprimary"
+                                android:foregroundGravity="center"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="@string/account_verification_submit_text"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                tools:ignore="MissingPrefix,RelativeOverlap,RtlHardcoded" />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
+
+
+
+
+
+
+
+

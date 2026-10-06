@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_support_header"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_gray_common"
+    android:orientation="vertical">
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar_support"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_toolbar_gradient">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imgbtn_back"
+                style="@style/AppThemeToolBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_whitearrow" />
+
+            <ImageButton
+                android:id="@+id/imgbtn_backs"
+                style="@style/AppThemeToolBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_whitearrow"
+                android:visibility="invisible" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/textView_support"
+                style="@style/AppThemeToolBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imgbtn_backs"
+                android:layout_alignBottom="@+id/imgbtn_backs"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_toStartOf="@+id/imgbtn_backs"
+                android:layout_toEndOf="@+id/imgbtn_back"
+                android:gravity="center"
+                android:text="@string/support_header"
+                android:textAllCaps="true"
+                tools:ignore="MissingPrefix" />
+
+        </RelativeLayout>
+
+    </android.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fab_chat"
+        android:layout_below="@+id/toolbar_support">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_pages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/adapter_support_pages" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_static_pages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <LinearLayout
+                android:id="@+id/ll_aboutus"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginEnd="10.0dip"
+                android:layout_marginBottom="10.0dip"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="35.0dip"
+                    android:layout_height="35.0dip"
+                    android:layout_marginStart="10dp"
+                    android:clickable="false"
+                    android:contentDescription="@string/todo"
+                    android:src="@mipmap/ic_menu_about_us" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_aboutus"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:clickable="false"
+                    android:gravity="start|center"
+                    android:paddingStart="10.0dip"
+                    android:paddingEnd="10.0dip"
+                    android:text="@string/support_about_us"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.4dip"
+                android:background="#ff000000" />
+
+            <LinearLayout
+                android:id="@+id/ll_privacy"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginEnd="10.0dip"
+                android:layout_marginBottom="10.0dip"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="35.0dip"
+                    android:layout_height="35.0dip"
+                    android:layout_marginStart="10dp"
+                    android:clickable="false"
+                    android:contentDescription="@string/todo"
+                    android:padding="3dp"
+                    android:src="@mipmap/ic_menu_privacy" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_privacy"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:clickable="false"
+                    android:gravity="start|center"
+                    android:paddingStart="10.0dip"
+                    android:paddingEnd="10.0dip"
+                    android:text="@string/support_privacy_policy"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.4dip"
+                android:background="#ff000000" />
+
+            <LinearLayout
+                android:id="@+id/ll_termsandcondition"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginEnd="10.0dip"
+                android:layout_marginBottom="10.0dip"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="35.0dip"
+                    android:layout_height="35.0dip"
+                    android:layout_marginStart="10dp"
+                    android:clickable="false"
+                    android:contentDescription="@string/todo"
+                    android:padding="3dp"
+                    android:src="@mipmap/ic_menu_terms" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_termsandcondition"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:clickable="false"
+                    android:gravity="start|center"
+                    android:paddingStart="10.0dip"
+                    android:paddingEnd="10.0dip"
+                    android:text="@string/support_terms_and_conditions"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.4dip"
+                android:background="#ff000000" />
+
+            <LinearLayout
+                android:id="@+id/ll_contactus"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginEnd="10.0dip"
+                android:layout_marginBottom="10.0dip"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="35.0dip"
+                    android:layout_height="35.0dip"
+                    android:layout_marginStart="10dp"
+                    android:clickable="false"
+                    android:contentDescription="@string/todo"
+                    android:padding="1dp"
+                    android:src="@mipmap/ic_menu_contact_us" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_contactus"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:clickable="false"
+                    android:gravity="start|center"
+                    android:paddingStart="10.0dip"
+                    android:paddingEnd="10.0dip"
+                    android:text="@string/support_contact_us"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.4dip"
+                android:background="#ff000000" />
+
+            <LinearLayout
+                android:id="@+id/ll_faq"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginEnd="10.0dip"
+                android:layout_marginBottom="10.0dip"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="35.0dip"
+                    android:layout_height="35.0dip"
+                    android:layout_marginStart="10dp"
+                    android:clickable="false"
+                    android:contentDescription="@string/todo"
+                    android:padding="5dp"
+                    android:src="@mipmap/ic_menu_help" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_faq"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:clickable="false"
+                    android:gravity="start|center"
+                    android:paddingStart="10.0dip"
+                    android:paddingEnd="10.0dip"
+                    android:text="@string/faq"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.4dip"
+                android:background="#ff000000" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/fab_chat"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_above="@+id/lyt_fb_view"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/ic_shape_circle"
+        android:contentDescription="@string/todo"
+        android:elevation="10dp"
+        android:src="@drawable/ic_baseline_chat_24"
+        app:backgroundTint="@color/colorPrimary"
+        app:rippleColor="@color/gray_light"
+        app:tint="@color/white"
+        android:visibility="gone"
+        />
+
+    <com.instaguard.user.CustomViews.CustomTextView
+        android:id="@+id/txt_web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:clickable="false"
+        android:gravity="center"
+        android:padding="10.0dip"
+        android:text="www.roadrescuers.com"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_fb_view"
+        layout="@layout/layout_facebook_ads_view" />
+
+
+
+</RelativeLayout>

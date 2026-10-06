@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ufx_order_details"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_parent_lyt_booking_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <android.widget.Toolbar
+            android:id="@+id/toolbar_booking_details"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_toolbar_gradient"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back_booking_details"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow"
+                    tools:ignore="ContentDescription" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back_booking_detailss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow"
+                    android:visibility="invisible"
+                    tools:ignore="ContentDescription" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_booking_details_header"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_back_booking_detailss"
+                    android:layout_alignBottom="@+id/imgbtn_back_booking_detailss"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toStartOf="@+id/imgbtn_back_booking_detailss"
+                    android:layout_toEndOf="@+id/imgbtn_back_booking_details"
+                    android:text="@string/header_booking_details_txt"
+                    tools:ignore="MissingPrefix,RtlHardcoded" />
+            </RelativeLayout>
+        </android.widget.Toolbar>
+
+        <RelativeLayout
+            android:id="@+id/rl_c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar_booking_details">
+
+            <LinearLayout
+                android:id="@+id/ll_serviceitem"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar_booking_details"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="10.0dip"
+                tools:ignore="NotSibling">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_serviceitem_label"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="start|center"
+                    android:paddingStart="5.0dip"
+                    android:text="@string/item"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff030303"
+                    android:textSize="16dp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_serviceitem"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="end|center"
+                    android:paddingEnd="5.0dip"
+                    android:text=""
+                    android:textAlignment="viewEnd"
+
+                    android:textColor="#ff4d4949"
+                    android:textSize="16dp" />
+            </LinearLayout>
+            <!--Agent & DaysCount-->
+            <LinearLayout
+                android:id="@+id/ll_agent_total"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_serviceitem"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="10.0dip"
+                android:visibility="gone"
+                tools:ignore="NotSibling">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="start|center"
+                    android:paddingStart="5.0dip"
+                    android:text="@string/total_guard_amount"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff030303"
+                    android:textSize="16dp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_total_agent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2.0"
+                    android:gravity="end|center"
+                    android:paddingEnd="5.0dip"
+                    android:text=""
+                    android:textAlignment="viewEnd"
+                    android:textColor="#ff4d4949"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_days_total"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_agent_total"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="10.0dip"
+                android:visibility="gone"
+                tools:ignore="NotSibling">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="start|center"
+                    android:paddingStart="5.0dip"
+                    android:text="Total Day Amount"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff030303"
+                    android:textSize="16dp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_total_days"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2.0"
+                    android:gravity="end|center"
+                    android:paddingEnd="5.0dip"
+                    android:text=""
+                    android:textAlignment="viewEnd"
+
+                    android:textColor="#ff4d4949"
+                    android:textSize="16dp" />
+            </LinearLayout>
+            <!--Agent & DaysCount-->
+
+            <LinearLayout
+                android:id="@+id/ll_providername"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_days_total"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="10.0dip"
+                android:visibility="gone">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_providername_label"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="start|center"
+
+                    android:paddingStart="5.0dip"
+                    android:text="@string/towing_driver"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff030303"
+                    android:textSize="16dp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_providername"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2.0"
+                    android:gravity="end|center"
+                    android:paddingEnd="5.0dip"
+                    android:text=""
+
+                    android:textAlignment="viewEnd"
+                    android:textColor="#ff4d4949"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_bookingdate"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_providername"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="10.0dip">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_bookingdate_label"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="start|center"
+                    android:paddingStart="5.0dip"
+
+                    android:text="@string/start_date"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff030303"
+                    android:textSize="16dp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_bookingdate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="end|center"
+                    android:paddingEnd="5.0dip"
+                    android:text=""
+                    android:textAlignment="viewEnd"
+                    android:textColor="#ff4d4949"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_bookingtime"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_bookingdate"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="10.0dip">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_bookingtime_label"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="start|center"
+                    android:paddingStart="5.0dip"
+                    android:text="@string/start_time"
+
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff030303"
+                    android:textSize="16dp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_bookingtime"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="end|center"
+                    android:paddingEnd="5.0dip"
+                    android:text=""
+                    android:textAlignment="viewEnd"
+                    android:textColor="#ff4d4949"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_bookingdate_end"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_bookingtime"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="10.0dip">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_bookingdate_label_end"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="start|center"
+                    android:paddingStart="5.0dip"
+                    android:text="@string/end_date"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff030303"
+                    android:textSize="16dp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_bookingdate_end"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="end|center"
+                    android:paddingEnd="5.0dip"
+                    android:text=""
+                    android:textAlignment="viewEnd"
+                    android:textColor="#ff4d4949"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_bookingtime_end"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_bookingdate_end"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="10.0dip">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_bookingtime_label_end"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="start|center"
+                    android:paddingStart="5.0dip"
+                    android:text="@string/end_time"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff030303"
+                    android:textSize="16dp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_bookingtime_end"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="end|center"
+                    android:paddingEnd="5.0dip"
+                    android:text=""
+                    android:textAlignment="viewEnd"
+                    android:textColor="#ff4d4949"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_bookingtime_guard_count"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_bookingtime_end"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="10.0dip">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_bookingtime_label_guard_count"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="start|center"
+                    android:paddingStart="5.0dip"
+                    android:text="@string/no_of_agents"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff030303"
+                    android:textSize="16dp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_bookingtime_guard_count"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="end|center"
+                    android:paddingEnd="5.0dip"
+                    android:text="2 Guards"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#ff4d4949"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_bookinglocation"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_bookingtime_guard_count"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="10.0dip">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_bookinglocation_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="5.0dip"
+                    android:text="@string/booking_details_booking_address"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff030303"
+                    android:textSize="16sp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_bookinglocation"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:padding="5.0dip"
+                    android:text="-"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff4d4949"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_emergency_msg"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_bookinglocation"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="10.0dip">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_ll_emergency_msg_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="5.0dip"
+                    android:text="@string/emrgency_instruction"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff030303"
+                    android:textSize="16sp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_ll_emergency_msg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:padding="5.0dip"
+                    android:text="-emrgency_instruction"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff4d4949"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_promo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_emergency_msg"
+                android:layout_marginTop="15.0dip"
+                android:orientation="vertical"
+                android:paddingStart="5.0dip"
+                android:paddingEnd="5.0dip"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/ll_promo_"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15.0dip"
+                    android:orientation="horizontal"
+                    android:paddingStart="10.0dip"
+                    android:paddingEnd="15.0dip">
+
+                    <com.instaguard.user.CustomViews.CustomEditText
+                        android:id="@+id/ed_promo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5.0dip"
+                        android:layout_marginEnd="10.0dip"
+                        android:layout_weight="1.0"
+                        android:hint="@string/promo_code" />
+
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_apply_promo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40.0dip"
+                        android:layout_weight="0.0"
+                        android:background="@drawable/bg_rect_filled_colorprimary"
+                        android:gravity="center"
+                        android:paddingStart="15.0dip"
+                        android:paddingTop="10.0dip"
+                        android:paddingEnd="15.0dip"
+                        android:paddingBottom="10.0dip"
+                        android:text="@string/booking_details_apply"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_promo_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rectanglar_border"
+                    android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/promocode_your_promo_accepted"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/ll_view_promocode_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/bg_rect_border"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:visibility="gone">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:paddingStart="2dp"
+                        android:paddingEnd="2dp">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp">
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/txt_promo_code_label"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="start|center"
+                                android:paddingStart="2dp"
+                                android:paddingTop="2dp"
+                                android:paddingEnd="2dp"
+                                android:paddingBottom="2dp"
+                                android:text="@string/promo_code"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:gravity="center"
+                                android:text="@string/Esto"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/txt_promo_code"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="end|center"
+                                android:paddingStart="2dp"
+                                android:paddingTop="2dp"
+                                android:paddingEnd="2dp"
+                                android:paddingBottom="2dp"
+                                android:text="--"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp">
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/txt_promo_code_descr_label"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="start|center"
+                                android:paddingStart="2dp"
+                                android:paddingTop="2dp"
+                                android:paddingEnd="2dp"
+                                android:paddingBottom="2dp"
+                                android:text="@string/description"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:gravity="center"
+                                android:text="@string/Esto"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/txt_promo_code_descr"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="end|center"
+                                android:paddingStart="2dp"
+                                android:paddingTop="2dp"
+                                android:paddingEnd="2dp"
+                                android:paddingBottom="2dp"
+                                android:text="--"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp">
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/txt_promo_code_discount_offer_label"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="start|center"
+                                android:paddingStart="2dp"
+                                android:paddingTop="2dp"
+                                android:paddingEnd="2dp"
+                                android:paddingBottom="2dp"
+                                android:text="@string/discount"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:gravity="center"
+                                android:text="@string/Esto"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/txt_promo_code_discount_offer"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="end|center"
+                                android:paddingStart="2dp"
+                                android:paddingTop="2dp"
+                                android:paddingEnd="2dp"
+                                android:paddingBottom="2dp"
+                                android:text="--"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp">
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/txt_promo_code_exp_date_label"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="start|center"
+                                android:paddingStart="2dp"
+                                android:paddingTop="2dp"
+                                android:paddingEnd="2dp"
+                                android:paddingBottom="2dp"
+                                android:text="@string/expiry_date"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:gravity="center"
+                                android:text="@string/Esto"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/txt_promo_code_exp_date"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="end|center"
+                                android:paddingStart="2dp"
+                                android:paddingTop="2dp"
+                                android:paddingEnd="2dp"
+                                android:paddingBottom="2dp"
+                                android:text="--"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+
+                        </TableRow>
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_apply_promo_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/rectanglar_border"
+                    android:gravity="center|end"
+                    android:paddingStart="10.0dip"
+                    android:paddingTop="6.0dip"
+                    android:paddingEnd="10.0dip"
+                    android:paddingBottom="6.0dip"
+                    android:text="@string/cancel"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_comment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_promo"
+                android:layout_marginTop="15.0dip"
+                android:orientation="vertical"
+                android:padding="10.0dip"
+                android:visibility="gone">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/ll_comment_label"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="start|center"
+                    android:paddingStart="5.0dip"
+                    android:text="@string/booking_details_comments_label"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <com.instaguard.user.CustomViews.CustomEditText
+                    android:id="@+id/txt_comment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_weight="1.0"
+                    app:met_underlineColor="@color/hintgray" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/footer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_c"
+            android:orientation="vertical">
+
+            <com.instaguard.user.CustomViews.CustomButton
+                android:id="@+id/btn_booking_details_continue"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_margin="20.0dip"
+                android:background="@drawable/bg_rect_filled_colorprimary"
+                android:text="@string/booking_continue"
+                android:textColor="@color/white" />
+
+            <include
+                android:id="@+id/lyt_fb_view"
+                layout="@layout/layout_facebook_ads_view" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

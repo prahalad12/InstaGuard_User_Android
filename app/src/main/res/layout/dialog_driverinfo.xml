@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@color/transparent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_profile_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="false">
+
+            <RelativeLayout
+                android:id="@+id/RlUserfield"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginTop="0dp">
+
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/img_customer_info_pro_pic"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:scaleType="fitXY"
+                    app:placeholderImage="@mipmap/male"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp"
+                     />
+
+
+                <ImageView
+                    android:id="@+id/imgclose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/ic_close_black"
+                    android:contentDescription="@string/todo" />
+
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_customer_name_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/img_customer_info_pro_pic"
+                    android:text="@string/app_name"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:id="@+id/llbooking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_customer_name_info"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/img_customer_info_pro_pic"
+                    android:orientation="horizontal">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/booking_id"
+                        android:textStyle="bold" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_bookingid_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="123"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/llmobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llbooking"
+                    android:layout_marginStart="20dp"
+                    android:layout_toRightOf="@+id/img_customer_info_pro_pic"
+                    android:orientation="horizontal">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/mobile"
+                        android:textStyle="bold" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_mobile_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="+91 (782) 6963223"
+                        android:textColor="@color/black" />
+
+
+                </LinearLayout>
+
+               <!-- <View
+                    android:id="@+id/txtview"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#c0c0c0"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    android:layout_below="@+id/img_customer_info_pro_pic" />
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtview"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="4.0dip"
+                    android:paddingRight="4.0dip"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/ll_call"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/ic_call" />
+
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/customer_info_call"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="65dp"
+                        android:layout_weight="0.01"
+                        android:background="#c0c0c0" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_message"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/ic_msg" />
+
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/customer_info_message"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="65dp"
+                        android:layout_weight="0.01"
+                        android:visibility="gone"
+                        android:background="#c0c0c0" />
+
+
+                </LinearLayout>-->
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+

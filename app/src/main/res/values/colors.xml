@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#2a2f83</color>   <!-- ***** NOTE Gradient Style ******-->
+    <color name="colorPrimaryDark">#832b67</color>
+    <color name="colorAccent">#832b67</color>   <!-- ***** NOTE Gradient Style ******-->
+
+    <color name="colorAccent_light">#77832b67</color>
+    <color name="colorPrimary_light">#772a2f83</color>
+
+    <color name="colorGreen">#BFFF00</color>
+
+    <color name="colorBlacktransperant">#99000000</color>
+    <color name="colorGreentransperant">#99347c0c</color>
+    <color name="colorprogresstransparent">#00FFFFFF</color>
+    <color name="colorBlacktrans">#45000000</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#181818</color>
+    <color name="blacks">#000000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="primary_blue_light_alpha">#1F005ABA</color>
+
+    <color name="nav_background">#FFF</color>
+    <color name="nav_bottom_text">#FFF</color>
+    <color name="nav_text">#000</color>
+
+    <color name="nav_bottom_background">#ffd204</color>
+
+    <color name="grey_80">#37474F</color>
+    <color name="hintgray">#5f000000</color>
+    <color name="hintgray_category">#BCB8B9B9</color>
+    <color name="bg_gray_common">#FFF</color>
+
+    <!--Custom Dialog-->
+    <color name="dialog_bg_color">#FFFFFF</color>
+    <color name="dialog_bg_border">#BDBDBD</color>
+    <color name="text_color_bright">#FFFFFF</color>
+    <color name="text_color_dark">#616161</color>
+
+    <color name="darker_gray">#000</color>
+    <color name="field_text_color_error">#FF0000</color>
+    <color name="rippelColor">#0099CC</color>
+    <color name="holo_green_dark">#ff669900</color>
+    <color name="holo_red_dark">#ffcc0000</color>
+
+    <!--Switch-->
+    <color name="blue">#123256</color>
+    <color name="gray">#444444</color>
+    <color name="gray_light">#BBBBBB</color>
+    <color name="gray_very_light">#DDDDDD</color>
+    <color name="gray_very_very_light">#70DDDDDD</color>
+    <color name="gray_black">#9B9B9B</color>
+    <!--Switch-->
+
+</resources>

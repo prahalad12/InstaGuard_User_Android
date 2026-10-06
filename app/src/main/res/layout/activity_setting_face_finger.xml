@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_parent_settings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_settings"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_toolbar_gradient">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back_profile"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/btn_edit_"
+                    android:layout_alignBottom="@+id/btn_edit_"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_back_whitearrow"
+                    app:tint="@color/white"
+                    tools:ignore="ContentDescription" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_signin"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_back_profile"
+                    android:layout_alignBottom="@+id/imgbtn_back_profile"
+                    android:layout_toStartOf="@+id/btn_edit_"
+                    android:layout_toEndOf="@+id/imgbtn_back_profile"
+                    android:text="@string/biometrics" />
+
+                <ImageView
+                    android:id="@+id/btn_edit_"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/ic_shape_circle"
+                    android:contentDescription="@string/todo"
+                    android:padding="12dp"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar_settings">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/tv_finger_print_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/biometrics"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/iv_finger_print"
+                    android:layout_height="200dp"
+                    android:layout_width="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_finger_print_label"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="security_lock.json"
+                    app:lottie_loop="true"
+                    app:lottie_repeatCount="5" />
+
+                <ImageView
+                    android:id="@+id/iv_finger_print_"
+                    android:layout_width="0dp"
+                    android:layout_height="105dp"
+                    android:layout_below="@+id/tv_finger_print_label"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="0dp"
+                    android:contentDescription="@string/todo"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_finger_print_label" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/tv_finger_print_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_finger_print"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/settings_status_off"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_finger_print" />
+
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/sb_on_off_fingerprint"
+                    android:layout_width="45dp"
+                    android:layout_height="25dp"
+                    android:layout_below="@+id/tv_finger_print_status"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layoutDirection="locale"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_finger_print_status" />
+
+                <!--app:sb_background="#9BA2AD"
+                    app:sb_border_width="0dp"
+                    app:sb_button_color="#ffffff"
+                    app:sb_checked_color="#E40B12"
+                    app:sb_checkline_color="#00A36F95"
+                    app:sb_effect_duration="100"
+                    app:sb_uncheckcircle_color="#00A36F95"-->
+                <View
+                    android:id="@+id/v_line_2"
+                    android:layout_width="0dp"
+                    android:layout_height="0.3dp"
+                    android:background="@color/gray_light"
+                    android:elevation="0dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sb_on_off_fingerprint" />
+
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/tv_face_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/face_recognition"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/v_line_2" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/iv_face_print"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_face_label"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="face.json"
+                    app:lottie_loop="true"
+                    app:lottie_repeatCount="5" />
+
+                <ImageView
+                    android:id="@+id/iv_face_print_"
+                    android:layout_width="0dp"
+                    android:layout_height="105dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="0dp"
+                    android:contentDescription="@string/todo"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_face_label" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/tv_face_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_finger_print"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/settings_status_off"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_face_print" />
+
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/sb_on_off_face"
+                    android:layout_width="45dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layoutDirection="locale"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_face_status" />
+
+                <!--app:sb_background="#9BA2AD"
+                    app:sb_border_width="0dp"
+                    app:sb_button_color="#ffffff"
+                    app:sb_checked_color="#E40B12"
+                    app:sb_checkline_color="#00A36F95"
+                    app:sb_effect_duration="100"
+                    app:sb_uncheckcircle_color="#00A36F95" -->
+
+                <View
+                    android:id="@+id/v_line__2"
+                    android:layout_width="0dp"
+                    android:layout_height="0.3dp"
+                    android:background="@color/gray_light"
+                    android:elevation="0dp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sb_on_off_face" />
+
+
+                <View
+                    android:id="@+id/v_line_vertical_1"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/gray_light"
+                    android:elevation="0dp"
+                    android:paddingBottom="15dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/sb_on_off_fingerprint"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/iv_email"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_below="@+id/tv_finger_print_label"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="0dp"
+                    android:contentDescription="@string/todo"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/v_line_2" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/tv_email_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Email Request"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_email" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/tv_email_label_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Send 2FA Code via Email"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_email_label" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/tv_email_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_finger_print"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Status Off"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_email_label_1" />
+
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/sb_on_off_email"
+                    android:layout_width="45dp"
+                    android:layout_height="25dp"
+                    android:layout_below="@+id/tv_finger_print_status"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layoutDirection="locale"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_email_status" />
+
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:barrierDirection="top" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:barrierDirection="top" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:barrierDirection="top" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

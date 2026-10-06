@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.1"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5" />
+
+        <ImageView
+            android:id="@+id/splashlogo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:layout_weight="1.5"
+            android:alpha="0.2"
+            android:contentDescription="@string/todo"
+            android:gravity="center"
+            android:padding="25dp"
+            android:src="@drawable/logo_trans"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/bg_toolbar_gradient"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/Toolbar.Light">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/img_menu_main"
+                style="@style/AppThemeToolBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_marginTop="5dp"
+                android:contentDescription="@string/todo"
+                android:onClick="menubuttonClick"
+                android:padding="10dp"
+                android:src="@drawable/ic_menu_black" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/img_menu_main"
+                android:layout_alignBottom="@+id/img_menu_main"
+                android:layout_toStartOf="@+id/iv_alert_main_main"
+                android:layout_toEndOf="@+id/img_menu_main"
+                android:contentDescription="@string/todo"
+                android:padding="5dp"
+                android:src="@drawable/logo" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/toolbar_title_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/img_menu_main"
+                android:layout_alignBottom="@+id/img_menu_main"
+                android:layout_gravity="center"
+                android:layout_toStartOf="@+id/iv_alert_main_main"
+                android:layout_toEndOf="@+id/img_menu_main"
+                android:gravity="center"
+                android:text="@string/app_name_toolbar"
+                android:textAllCaps="true"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_alert_main_main"
+                style="@style/AppThemeToolBar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="5dp"
+                android:contentDescription="@string/todo"
+                android:padding="10dp"
+                android:src="@mipmap/ic_eme_alert"
+                android:visibility="invisible"
+                app:tint="@android:color/holo_red_dark" />
+
+        </RelativeLayout>
+
+    </android.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/rl_parent_lyt_map_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_main"
+        android:layout_centerInParent="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_main_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ll_btn"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="15dp"
+            app:spanCount="3"
+            tools:itemCount="5"
+            tools:listitem="@layout/adapter_mapcategory_main" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:visibility="gone">
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:id="@+id/txt_no_records_main"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/no_record_found"
+            android:textColor="@color/colorPrimaryDark"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/pb_main_category_main"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:indeterminateTint="@color/black"
+            android:progressTint="@color/black"
+            android:secondaryProgressTint="@color/black"
+            android:visibility="visible" />
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:id="@+id/txt_loading_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pb_main_category_main"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:hint="@string/loading"
+            android:visibility="gone" />
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:id="@+id/txt_refresh_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_loading_main"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:drawableStart="@drawable/ic_refresh_black_small"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/refresh"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_toolbar_gradient_bottom_top"
+            android:foreground="@drawable/bottom_shadow"
+            android:foregroundTint="@color/gray_very_light"
+            android:orientation="vertical">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/update_language_setup"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rect_filled_colorprimary"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/update_language_setup"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/update_currency_setup"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rect_filled_colorprimary"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/update_currency_setup"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/update_ongoing_setup"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:drawableEnd="@drawable/ic_baseline_chevron_right_24"
+                    android:drawableTint="@color/white"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/ongoingjobs_header"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/update_subscription_setup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/your_subs_plan_expiry"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

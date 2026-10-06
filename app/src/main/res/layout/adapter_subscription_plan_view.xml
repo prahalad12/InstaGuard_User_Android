@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_top_subs_plan_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/img_offers"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/ic_circle_color_gray"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:contentDescription="@string/todo"
+                android:padding="10dp"
+                android:src="@drawable/ic_round_local_offer_24"
+                app:tint="@color/white" />
+
+            <LinearLayout
+                android:id="@+id/ll_parent_lyt_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/img_offers"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/img_check"
+                android:layout_toEndOf="@+id/img_offers"
+                android:orientation="vertical">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center|start"
+                    android:hint="--"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center|start"
+                    android:hint="--"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start"
+                    android:maxLines="2"
+                    android:hint="--"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_more_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_parent_lyt_view"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:drawableEnd="@drawable/ic_chevron_right_black_small"
+                android:gravity="center|end"
+                android:maxLines="2"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="@string/more_info"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <ImageView
+                android:id="@+id/img_check"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="5dp"
+                android:contentDescription="@string/todo"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_baseline_check_circle_24"
+                app:tint="@color/gray_light" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
+
+

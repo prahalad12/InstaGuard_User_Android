@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame_mainjob"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_job_inprogress"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/bg_toolbar_gradient">
+
+        <ImageView
+            android:id="@+id/iv_back_job_inprogress"
+            style="@style/AppThemeToolBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/todo"
+            android:padding="10dp"
+            android:src="@drawable/ic_back_whitearrow" />
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:id="@+id/txt_job_inprogres_title"
+            style="@style/AppThemeToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_back_job_inprogress"
+            android:layout_alignBottom="@+id/iv_back_job_inprogress"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="0dp"
+            android:layout_toStartOf="@+id/iv_alert_main"
+            android:layout_toEndOf="@+id/iv_back_job_inprogress"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="@string/job_inprogress" />
+
+        <ImageView
+            android:id="@+id/iv_alert_main"
+            style="@style/AppThemeToolBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="5dp"
+            android:layout_toStartOf="@+id/iv_menu_job_inprogress"
+            android:contentDescription="@string/todo"
+            android:visibility="invisible"
+            android:padding="10dp"
+            android:src="@mipmap/ic_eme_alert"
+            app:tint="@color/holo_red_dark" />
+
+        <ImageView
+            android:id="@+id/iv_menu_job_inprogress"
+            style="@style/AppThemeToolBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/todo"
+            android:padding="10dp"
+            android:src="@drawable/ic_menu_vertical"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_header_job_inprogress"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/toolbar_job_inprogress"
+        android:visibility="visible">
+
+        <include
+            android:id="@+id/rl__g"
+            layout="@layout/layout_google_ads_view"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_switch_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl__g"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:background="@color/gray_light"
+            android:padding="10dp">
+
+            <com.instaguard.user.CustomViews.CustomSwitch.ToggleSwitch
+                android:id="@+id/switch_container_livetrack_jobinprogress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dip"
+                android:layout_marginTop="5dip"
+                android:layout_marginEnd="5dip"
+                android:background="@drawable/bg_rect_filled_colorprimary"
+                android:backgroundTint="@color/white"
+                android:gravity="center"
+                android:padding="1dp"
+                android:textSize="14sp"
+                app:activeBgColor="@color/colorAccent"
+                app:activeTextColor="@color/white"
+                app:cornerRadius="5dp"
+                app:inactiveBgColor="@color/colorAccent_light"
+                app:inactiveTextColor="@color/white"
+                app:separatorColor="@color/gray_very_light"
+                app:textToggleLeft="@string/map_jopinprogress_live_track"
+                app:textToggleRight="@string/map_jopinprogress_job_in_progress"
+                app:toggleWidth="0dp" />
+
+        </RelativeLayout>
+
+        <!--Banner-->
+        <RelativeLayout
+            android:id="@+id/rl_top_image_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_switch_lyt"
+            android:visibility="gone">
+
+            <include
+                android:id="@+id/view_image_slider"
+                layout="@layout/layout_image_slider_main" />
+
+            <RelativeLayout
+                android:id="@+id/rl_emptyview_announcement"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="0dp"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray_very_light"
+                    android:contentDescription="@string/todo" />
+
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/logo_circle" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/empty_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:text="@string/no_result_found"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_map_job_inprogress"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/ll_wait_a_moment_payment"
+            android:layout_below="@+id/rl_top_image_slider"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".Activities.MainActivity" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_top_image_slider"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:background="@drawable/bg_rect_filled_colorprimary"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal"
+                android:textColor="@color/white" />
+
+            <Switch
+                android:id="@+id/switchm_traffic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/white"
+                android:checked="true"
+                android:thumbTint="@color/white"
+                android:trackTint="@color/white"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/satellite"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_currentLoction"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/rl_top_image_slider"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="currentLocationClick"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_currentLocation"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/ic_shape_circle"
+                android:contentDescription="@string/todo"
+                android:padding="10dp"
+                android:src="@drawable/ic_my_location" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lyt_job_inprogress_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ll_wait_a_moment_payment"
+            android:layout_below="@+id/rl_switch_lyt"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_job_inprogress" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_wait_a_moment_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/lyt_fb_view"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_wait_a_moment_card_payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/lyt_fb_view"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/wait_a_moment_provider_finish_the_service"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/lyt_fb_view"
+            layout="@layout/layout_facebook_ads_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:context=".Activities.MainActivity">
+
+        <FrameLayout
+            android:id="@+id/frame_mainactivity_jobinprogress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/lyt_chat"
+        layout="@layout/activity_chat"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_call"
+        layout="@layout/activity_voice"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_sms_alert"
+        layout="@layout/layout_sms_alert"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_trip_summary"
+        layout="@layout/dialog_trip_summary"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_card_payment"
+        layout="@layout/layout_card_stripe_payment"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_payment_add_card_view"
+        layout="@layout/layout_add_stripe_cards"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_payment_paynow_view"
+        layout="@layout/layout_payment_paynow_scan"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_very_very_light">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.widget.Toolbar
+            android:id="@+id/toolbar_providerlist"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_toolbar_gradient">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow"
+                    tools:ignore="ContentDescription" />
+
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_providerlist_header_"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_back"
+                    android:layout_alignBottom="@+id/imgbtn_back"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_toStartOf="@+id/imgbtn_refresh"
+                    android:layout_toEndOf="@+id/imgbtn_back"
+                    android:gravity="center|start"
+                    android:text="@string/header_booking_details_txt"
+                    tools:ignore="MissingPrefix,RtlHardcoded" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_refresh"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_refresh_black_24dp"
+                    android:visibility="invisible"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+        </android.widget.Toolbar>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="@drawable/bottom_shadow"
+            android:layout_below="@+id/toolbar_providerlist">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rl_view_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        android:id="@+id/view_image_slider"
+                        layout="@layout/layout_image_slider_main"
+                        android:visibility="visible" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_emptyview_announcement"
+                        android:layout_width="match_parent"
+                        android:layout_height="210dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/gray_very_light"
+                            android:contentDescription="@string/todo" />
+
+                        <ImageView
+                            android:layout_width="95dp"
+                            android:layout_height="95dp"
+                            android:layout_centerInParent="true"
+                            android:layout_centerHorizontal="true"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/logo_circle" />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/empty_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:paddingBottom="5dp"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:visibility="visible" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_providerlist_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_view_slider"
+                    android:layout_margin="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/app_name"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    tools:ignore="MissingPrefix,RtlHardcoded" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.4dp"
+                    android:layout_below="@+id/txt_providerlist_header"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/black" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_providerlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="#fff"
+                    android:visibility="gone"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_recharge_amt_lyt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rv_providerlist"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="#ffffffff">
+
+                    <LinearLayout
+                        android:id="@+id/ll_noprovider"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical"
+                        android:paddingTop="15.0dip"
+                        android:paddingBottom="15.0dip"
+                        android:visibility="visible">
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center|center_vertical"
+                            android:gravity="center"
+                            android:text="@string/providerlist_noprovider_txt"
+                            android:textStyle="bold" />
+
+                        <com.instaguard.user.CustomViews.CustomButton
+                            android:id="@+id/btn_provider_moreinfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:foregroundGravity="center"
+                            android:text="@string/providerlist_book_later_btn"
+                            android:textAlignment="inherit"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            android:textColor="#000"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <include
+                    android:id="@+id/lyt_dialog_booking_details"
+                    layout="@layout/dialog_booking_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/lyt_dialog_driver_view_details"
+        layout="@layout/dialog_driver_view_details"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_dialog_select_payment_type"
+        layout="@layout/dialog_select_payment_type"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_payment_add_card_view"
+        layout="@layout/layout_add_stripe_cards"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_payment_paynow_view"
+        layout="@layout/layout_payment_paynow_scan"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_dialog_requesting"
+        layout="@layout/dialog_requesting"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_dialog_acceptprovider"
+        layout="@layout/dialog_acceptprovider"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_dialog_acceptschedule"
+        layout="@layout/dialog_acceptschedule"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/frame_provider_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/rl_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBlacktransperant"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:saveEnabled="false"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

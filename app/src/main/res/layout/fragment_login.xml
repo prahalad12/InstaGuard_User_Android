@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame_signin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Fragments.LoginFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Fragments.LoginFragment"
+        tools:ignore="UselessParent">
+
+        <android.widget.Toolbar
+            android:id="@+id/toolbar_signin"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_toolbar_gradient">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    style="@style/AppThemeToolBar"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow"
+                    tools:ignore="ContentDescription" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_backs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow"
+                    android:visibility="invisible"
+                    tools:ignore="ContentDescription" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_signin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_backs"
+                    android:layout_alignBottom="@+id/imgbtn_backs"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toStartOf="@+id/imgbtn_backs"
+                    android:layout_toEndOf="@id/imgbtn_back"
+                    android:gravity="center"
+                    android:text="@string/log_in_title"
+                    style="@style/AppThemeToolBar"
+
+                    tools:ignore="MissingPrefix,RtlHardcoded" />
+
+            </RelativeLayout>
+        </android.widget.Toolbar>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar_signin"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_appname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="25dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="@string/welcome_to_product_name"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp"
+                        android:visibility="visible"
+                        tools:ignore="MissingPrefix,RtlHardcoded" />
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dip"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/iv_facebook"
+                            android:layout_width="50.0dip"
+                            android:layout_height="50.0dip"
+                            android:layout_marginEnd="44.0dip"
+                            android:contentDescription="@string/todo"
+                            android:src="@mipmap/facebook" />
+
+                        <ImageView
+                            android:id="@+id/iv_twitter"
+                            android:layout_width="50.0dip"
+                            android:layout_height="50.0dip"
+                            android:layout_marginEnd="44.0dip"
+                            android:contentDescription="@string/todo"
+                            android:src="@mipmap/twitter" />
+
+                        <ImageView
+                            android:id="@+id/iv_google"
+                            android:layout_width="50.0dip"
+                            android:layout_height="50.0dip"
+                            android:contentDescription="@string/todo"
+                            android:src="@mipmap/google" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20.0dip"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginEnd="20.0dip"
+                        android:visibility="gone">
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1.0dip"
+                            android:layout_centerInParent="true"
+                            android:background="#181818" />
+
+                        <ImageView
+                            android:layout_width="40.0dip"
+                            android:layout_height="40.0dip"
+                            android:layout_centerInParent="true"
+                            android:contentDescription="@string/todo"
+                            android:rotation="-45.0"
+                            android:src="@drawable/ic_square_white" />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/orTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="15.0dip"
+                            android:gravity="center"
+                            android:padding="10.0dip"
+                            android:text="OR"
+                            android:textColor="@color/white"
+                            android:textSize="15.0sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.instaguard.user.CustomViews.CustomEditText
+                            android:id="@+id/edt_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginEnd="20dp"
+                            android:hint="@string/log_in_phone_number_or_email_hint"
+                            android:inputType="textEmailAddress"
+                            android:paddingRight="10dp"
+                            android:singleLine="true"
+                            android:textCursorDrawable="@color/black"
+                            android:textAlignment="viewStart"
+                            app:met_floatingLabel="highlight"
+                            app:met_floatingLabelAlwaysShown="false"
+                            app:met_floatingLabelAnimating="true"
+                            app:met_textColorHint="@color/hintgray" />
+
+                        <ImageButton
+                            android:id="@+id/imgbtn_clear_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/edt_email"
+                            android:layout_alignBottom="@+id/edt_email"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@null"
+                            android:contentDescription="@string/todo"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_circle_close" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.instaguard.user.CustomViews.CustomEditText
+                            android:id="@+id/edt_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="20dp"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`~!@#$%^*()-_+=|{}[]:;&apos;&lt;&gt;&amp;/"
+                            android:hint="@string/log_in_password_hint"
+                            android:inputType="textPassword"
+                            android:textCursorDrawable="@color/black"
+                            android:paddingRight="10dp"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            app:met_floatingLabel="highlight"
+                            app:met_floatingLabelAlwaysShown="false"
+                            app:met_floatingLabelAnimating="true"
+                            app:met_textColorHint="@color/hintgray" />
+
+                        <ImageButton
+                            android:id="@+id/imgbtn_clear_password"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/edt_password"
+                            android:layout_alignBottom="@+id/edt_password"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@null"
+                            android:contentDescription="@string/todo"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_circle_close" />
+
+                    </RelativeLayout>
+
+                    <CheckBox
+                        android:id="@+id/cb_rememberme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:buttonTint="@color/colorPrimaryDark"
+                        android:text="@string/log_in_remember_me" />
+
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_forgotpassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="end"
+                        android:padding="5dp"
+                        android:text="@string/log_in_forgot_password_text"
+                        android:textColor="@color/colorPrimaryDark"
+                        tools:ignore="MissingPrefix,RtlHardcoded" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.instaguard.user.CustomViews.CustomButton
+                            android:id="@+id/btn_confirmsignin"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/bg_rect_filled_colorprimary"
+                            android:text="@string/log_in_login_btn_text"
+                            android:textColor="@color/white" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20.0dip"
+                        android:layout_marginTop="8.0dip"
+                        android:layout_marginEnd="20.0dip"
+                        android:visibility="visible">
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1.0dip"
+                            android:layout_centerInParent="true"
+                            android:background="#181818" />
+
+                        <ImageView
+                            android:layout_width="40.0dip"
+                            android:layout_height="40.0dip"
+                            android:layout_centerInParent="true"
+                            android:contentDescription="@string/todo"
+                            android:rotation="-45.0"
+                            android:src="@drawable/ic_square_white" />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/orTxts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="15.0dip"
+                            android:gravity="center"
+                            android:padding="10.0dip"
+                            android:text="@string/or_text"
+                            android:textColor="@color/white"
+                            android:textSize="15.0sp" />
+                    </RelativeLayout>
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_createanewaccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/log_in_don_t_have_an_account_text"
+                        android:textColor="@color/colorPrimaryDark"
+                        tools:ignore="MissingPrefix,RelativeOverlap,RtlHardcoded" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</FrameLayout>

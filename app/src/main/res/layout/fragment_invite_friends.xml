@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <android.widget.Toolbar
+            android:id="@+id/toolbar_invitefriends"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_toolbar_gradient">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_backs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow"
+                    android:visibility="invisible" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_invitefriends_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_back"
+                    android:layout_alignBottom="@+id/imgbtn_back"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_toStartOf="@+id/imgbtn_backs"
+                    android:layout_toEndOf="@+id/imgbtn_back"
+                    android:gravity="center"
+                    android:text="@string/invite_friends_headertxt"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    tools:ignore="MissingPrefix" />
+
+            </RelativeLayout>
+
+        </android.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/bg_gray_common"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56.0dip">
+
+                <ImageView
+                    android:layout_width="150.0dip"
+                    android:layout_height="150.0dip"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="5.0dip"
+                    android:src="@drawable/invite_banner" />
+
+                <ImageView
+                    android:id="@+id/img_invitequery"
+                    android:layout_width="140.0dip"
+                    android:layout_height="140.0dip"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="5.0dip"
+                    android:src="@mipmap/invite_banner" />
+            </RelativeLayout>
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_sharelabel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:gravity="center"
+                android:text="@string/invite_friends_share_your_invite_code"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="19.0sp" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_invitecode"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:gravity="center"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="39.0sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_invitecode_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:paddingStart="25.0dip"
+                    android:paddingEnd="25.0dip"
+                    android:text="@string/invite_friends_invite_your_friends_by_sharing_above_invite_code_and_earn_the_referral_amount"
+                    android:textAlignment="center"
+                    android:textColor="#ff000000"
+                    android:textSize="16dp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_detail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="@string/invite_friends_invite_your_friends_by_sharing_above_invite_code_and_earn_the_referral_amount"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15.0sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_invitebutton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10.0dip"
+        android:orientation="vertical">
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/invite_friends_btn"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15.0dip"
+            android:layout_marginBottom="10.0dip"
+            android:layout_marginEnd="15.0dip"
+            android:orientation="horizontal">
+
+            <com.facebook.share.widget.ShareButton
+                android:id="@+id/fb_share_button"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@color/com_facebook_button_background_color"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp" />
+
+            <com.instaguard.user.CustomViews.CustomButton
+                android:id="@+id/btn_invitefriends"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_filled_colorprimary"
+                android:drawableEnd="@drawable/ic_baseline_share_20"
+                android:drawablePadding="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/sms"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/lyt_fb_view"
+            layout="@layout/layout_facebook_ads_view" />
+
+    </LinearLayout>
+
+</RelativeLayout>

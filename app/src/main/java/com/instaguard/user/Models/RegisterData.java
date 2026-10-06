@@ -1,0 +1,354 @@
+package com.instaguard.user.Models;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+/**
+ * Created by system7 on 10/10/2017.
+ */
+
+public class RegisterData {
+
+    @SerializedName("id")
+    @Expose
+    private Integer id;
+    @SerializedName("first_name")
+    @Expose
+    private String firstName;
+    @SerializedName("last_name")
+    @Expose
+    private String lastName;
+    @SerializedName("social_id")
+    @Expose
+    private Object socialId;
+    @SerializedName("social_type")
+    @Expose
+    private Object socialType;
+    @SerializedName("avatar")
+    @Expose
+    private Object avatar;
+    @SerializedName("email")
+    @Expose
+    private String email;
+    @SerializedName("country_code")
+    @Expose
+    private String countryCode;
+    @SerializedName("phone_number")
+    @Expose
+    private String phoneNumber;
+    @SerializedName("birth_date")
+    @Expose
+    private Object birthDate;
+    @SerializedName("gender")
+    @Expose
+    private Object gender;
+    @SerializedName("phone_verified")
+    @Expose
+    private Integer phoneVerified;
+    @SerializedName("email_verified")
+    @Expose
+    private Integer emailVerified;
+    @SerializedName("address")
+    @Expose
+    private Object address;
+    @SerializedName("city")
+    @Expose
+    private Object city;
+    @SerializedName("state_id")
+    @Expose
+    private Object stateId;
+    @SerializedName("country_id")
+    @Expose
+    private Object countryId;
+    @SerializedName("postal_code")
+    @Expose
+    private Object postalCode;
+    @SerializedName("device_type")
+    @Expose
+    private String deviceType;
+    @SerializedName("device_token")
+    @Expose
+    private Object deviceToken;
+    @SerializedName("login_token")
+    @Expose
+    private Object loginToken;
+    @SerializedName("reset_pass_token")
+    @Expose
+    private Object resetPassToken;
+    @SerializedName("language")
+    @Expose
+    private Integer language;
+    @SerializedName("currency")
+    @Expose
+    private Integer currency;
+    @SerializedName("last_seen")
+    @Expose
+    private Object lastSeen;
+    @SerializedName("status")
+    @Expose
+    private Integer status;
+    @SerializedName("created_at")
+    @Expose
+    private String createdAt;
+    @SerializedName("updated_at")
+    @Expose
+    private String updatedAt;
+    @SerializedName("referral_code")
+    @Expose
+    private Object referralCode;
+    @SerializedName("invite_code")
+    @Expose
+    private Object inviteCode;
+    @SerializedName("salt")
+    @Expose
+    private Object salt;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Object getSocialId() {
+        return socialId;
+    }
+
+    public void setSocialId(Object socialId) {
+        this.socialId = socialId;
+    }
+
+    public Object getSocialType() {
+        return socialType;
+    }
+
+    public void setSocialType(Object socialType) {
+        this.socialType = socialType;
+    }
+
+    public Object getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(Object avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Object getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Object birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public Object getGender() {
+        return gender;
+    }
+
+    public void setGender(Object gender) {
+        this.gender = gender;
+    }
+
+    public Integer getPhoneVerified() {
+        return phoneVerified;
+    }
+
+    public void setPhoneVerified(Integer phoneVerified) {
+        this.phoneVerified = phoneVerified;
+    }
+
+    public Integer getEmailVerified() {
+        return emailVerified;
+    }
+
+    public void setEmailVerified(Integer emailVerified) {
+        this.emailVerified = emailVerified;
+    }
+
+    public Object getAddress() {
+        return address;
+    }
+
+    public void setAddress(Object address) {
+        this.address = address;
+    }
+
+    public Object getCity() {
+        return city;
+    }
+
+    public void setCity(Object city) {
+        this.city = city;
+    }
+
+    public Object getStateId() {
+        return stateId;
+    }
+
+    public void setStateId(Object stateId) {
+        this.stateId = stateId;
+    }
+
+    public Object getCountryId() {
+        return countryId;
+    }
+
+    public void setCountryId(Object countryId) {
+        this.countryId = countryId;
+    }
+
+    public Object getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(Object postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getDeviceType() {
+        return deviceType;
+    }
+
+    public void setDeviceType(String deviceType) {
+        this.deviceType = deviceType;
+    }
+
+    public Object getDeviceToken() {
+        return deviceToken;
+    }
+
+    public void setDeviceToken(Object deviceToken) {
+        this.deviceToken = deviceToken;
+    }
+
+    public Object getLoginToken() {
+        return loginToken;
+    }
+
+    public void setLoginToken(Object loginToken) {
+        this.loginToken = loginToken;
+    }
+
+    public Object getResetPassToken() {
+        return resetPassToken;
+    }
+
+    public void setResetPassToken(Object resetPassToken) {
+        this.resetPassToken = resetPassToken;
+    }
+
+    public Integer getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Integer language) {
+        this.language = language;
+    }
+
+    public Integer getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(Integer currency) {
+        this.currency = currency;
+    }
+
+    public Object getLastSeen() {
+        return lastSeen;
+    }
+
+    public void setLastSeen(Object lastSeen) {
+        this.lastSeen = lastSeen;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Object getReferralCode() {
+        return referralCode;
+    }
+
+    public void setReferralCode(Object referralCode) {
+        this.referralCode = referralCode;
+    }
+
+    public Object getInviteCode() {
+        return inviteCode;
+    }
+
+    public void setInviteCode(Object inviteCode) {
+        this.inviteCode = inviteCode;
+    }
+
+    public Object getSalt() {
+        return salt;
+    }
+
+    public void setSalt(Object salt) {
+        this.salt = salt;
+    }
+
+}

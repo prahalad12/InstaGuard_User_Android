@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ufx_order_details"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_parent_lyt_dialog_select_payment_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_very_very_light">
+
+        <LinearLayout
+            android:id="@+id/ll_ll_payment_fare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_toolbar_gradient"
+            android:orientation="vertical">
+
+            <android.widget.Toolbar
+                android:id="@+id/toolbar_selectpayment"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_alignParentTop="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_back_selectpayment"
+                        style="@style/AppThemeToolBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:background="@null"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_back_whitearrow"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_back_selectpayments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:background="@null"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_back_whitearrow"
+                        android:visibility="invisible"
+                        tools:ignore="ContentDescription" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_selectpayment_header"
+                        style="@style/AppThemeToolBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/imgbtn_back_selectpayments"
+                        android:layout_alignBottom="@+id/imgbtn_back_selectpayments"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_toStartOf="@+id/imgbtn_back_selectpayments"
+                        android:layout_toEndOf="@+id/imgbtn_back_selectpayment"
+                        android:gravity="center"
+                        android:text="@string/selectpayment_header"
+                        tools:ignore="MissingPrefix,RtlHardcoded" />
+
+                </RelativeLayout>
+            </android.widget.Toolbar>
+
+            <LinearLayout
+                android:id="@+id/ll_payment_fare"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15.0dip"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="visible">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_base_fare_label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:padding="5dp"
+                        android:text="@string/intagrad_fee"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text=":"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_base_fare_payment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|end"
+                        android:padding="5dp"
+                        android:text="$12"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="gone">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_guard_fare_label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:padding="5dp"
+                        android:text="@string/guard_amount"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text=":"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_guard_fare_payment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|end"
+                        android:padding="5dp"
+                        android:text="$12"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="gone">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_total_hrs_label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:padding="5dp"
+                        android:text="@string/total_hrs"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text=":"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_total_hrs_payment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|end"
+                        android:padding="5dp"
+                        android:text="1 hr"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_total_vat_label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:padding="5dp"
+                        android:text="VAT (10%)"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text=":"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_total_vat_payment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|end"
+                        android:hint="$1"
+                        android:padding="5dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/gray_very_light"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/white" />
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:orientation="vertical">
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txt_fare_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center|start"
+                            android:padding="5dp"
+                            android:text="@string/total_fare"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txt_subscribed_user_payment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:gravity="center|start"
+                            android:padding="5dp"
+                            android:text="@string/free_job_request_discount"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="normal"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text=":"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_fare_payment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center|end"
+                        android:hint="$2"
+                        android:padding="5dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/gray_very_light"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_selectpayment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_ll_payment_fare"
+            android:foreground="@drawable/bottom_shadow"
+            android:orientation="vertical"
+            android:padding="5.0dip">
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_paymentmode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/payementselect_how_would_you_like_to_pay"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/bg_rect_border_payment">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_selectpayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/adapter_payment" />
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rg_selectpayment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_rect_filled_booknowlater_select_cp"
+                android:backgroundTint="@color/white"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:id="@+id/rb_mywallet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/black"
+                    android:checked="false"
+                    android:padding="5dp"
+                    android:text="@string/select_payment_my_wallet"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/gray_light"
+                    android:visibility="gone" />
+
+                <RadioButton
+                    android:id="@+id/rb_payonline"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/black"
+                    android:checked="false"
+                    android:padding="5dp"
+                    android:text="@string/select_payment_pay_online"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/gray_light" />
+
+                <RadioButton
+                    android:id="@+id/rb_cashonhand"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/black"
+                    android:checked="false"
+                    android:padding="5dp"
+                    android:text="@string/select_payment_pay_cash"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/gray_light"
+                    android:visibility="gone" />
+
+                <RadioButton
+                    android:id="@+id/rb_paypal"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/black"
+                    android:checked="false"
+                    android:padding="5dp"
+                    android:text="@string/select_payment_paypal"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/gray_light" />
+
+                <RadioButton
+                    android:id="@+id/rb_google_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/black"
+                    android:checked="false"
+                    android:padding="5dp"
+                    android:text="@string/pay_via_google_pay"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/gray_light"
+                    android:visibility="invisible" />
+
+                <com.instaguard.user.CustomViews.CustomButton
+                    android:id="@+id/google_pay_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/black"
+                    android:drawableStart="@drawable/powered_by_google_dark"
+                    android:visibility="visible" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_stripe_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_selectpayment"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:visibility="gone">
+
+            <com.instaguard.user.Helpers.Creditcard.fields.CreditCardModule
+                android:id="@+id/credit_card_module"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="20dp"
+                android:visibility="gone" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_addpayment_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="40dp"
+                android:gravity="center"
+                android:text="@string/payementselect_add_payment_details"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <!--<com.stripe.android.view.CardInputWidget
+                android:id="@+id/credit_card_module_stripe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="15dp" />-->
+
+            <com.instaguard.user.CustomViews.CustomButton
+                android:id="@+id/btn_addcard_payonline"
+                android:layout_width="match_parent"
+                android:layout_height="45sp"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_rect_filled_colorprimary"
+                android:gravity="center"
+                android:text="@string/payonline_add_card"
+                android:textAllCaps="true"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/footer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <com.instaguard.user.CustomViews.CustomButton
+                android:id="@+id/btn_booknow"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_margin="15dp"
+                android:background="@drawable/bg_rect_filled_colorprimary"
+                android:gravity="center"
+                android:text="@string/selectpayement_book_now"
+                android:textColor="@color/white" />
+
+            <include
+                android:id="@+id/rl__g"
+                layout="@layout/layout_google_ads_view"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

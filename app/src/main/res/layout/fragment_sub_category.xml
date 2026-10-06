@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_gray_common">
+
+        <android.widget.Toolbar
+            android:id="@+id/toolbar_sub_category"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@drawable/bg_toolbar_gradient">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/textView"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_back"
+                    android:layout_alignBottom="@+id/imgbtn_back"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_toStartOf="@+id/iv_menu_refresh"
+                    android:layout_toEndOf="@+id/imgbtn_back"
+                    android:foregroundGravity="center"
+                    android:gravity="center|start"
+                    android:text="@string/service_in_your_locality"
+                    android:textAlignment="viewStart"
+                    tools:ignore="MissingPrefix" />
+
+                <ImageView
+                    android:id="@+id/iv_menu_refresh"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_back"
+                    android:layout_alignBottom="@+id/imgbtn_back"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="top|right"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/todo"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_refresh_black_24dp"
+                    android:visibility="invisible"
+                    tools:ignore="RtlHardcoded" />
+
+            </RelativeLayout>
+        </android.widget.Toolbar>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout_sub_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rl_booknw_bookltr"
+            android:layout_below="@+id/toolbar_sub_category">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/rl_booknw_bookltr"
+                android:layout_below="@+id/toolbar_sub_category">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_image_slider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <include
+                                android:id="@+id/view_image_slider"
+                                layout="@layout/layout_image_slider_main"
+                                android:visibility="visible" />
+
+                            <RelativeLayout
+                                android:id="@+id/rl_emptyview_announcement"
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:layout_marginTop="0dp"
+                                android:gravity="center"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/gray_very_light"
+                                    android:contentDescription="@string/todo" />
+
+                                <ImageView
+                                    android:layout_width="95dp"
+                                    android:layout_height="95dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/logo_circle" />
+
+                                <com.instaguard.user.CustomViews.CustomTextView
+                                    android:id="@+id/empty_view"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:gravity="center"
+                                    android:paddingBottom="5dp"
+                                    android:text="@string/no_result_found"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    android:visibility="visible" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txt_select_service_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rl_image_slider"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="5dp"
+                            android:text="@string/select_service"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:visibility="gone" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcv_sub_category"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txt_select_service_label"
+                            android:layout_margin="5dp"
+                            android:visibility="visible"
+                            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/rl_fare_est_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rcv_sub_category"
+                            android:visibility="gone">
+
+                            <View
+                                android:id="@+id/view"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="#a1a1a1" />
+
+                            <TableLayout
+                                android:id="@+id/table_one"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/view"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="15dp">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="5dp">
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_est_fare_label"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/est_fare_amount"
+                                        android:textAlignment="viewStart"
+
+                                        android:textColor="@color/colorPrimary"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=":"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_fare_amount"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_weight="1"
+                                        android:gravity="end|center_vertical"
+                                        android:text="BF + EDC = $120"
+
+                                        android:textAlignment="viewEnd"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+                                </TableRow>
+
+                                <View
+                                    android:id="@+id/view2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:background="#a1a1a1" />
+
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="5dp">
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_bookid_label_trip_summary"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/base_fare_bf"
+                                        android:textAlignment="viewStart"
+
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=":"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_est_fare_base_fare_label"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+
+                                        android:layout_weight="1"
+                                        android:gravity="end|center_vertical"
+                                        android:text="$10"
+                                        android:textAlignment="viewEnd"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:id="@+id/tr_visit_fare"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="5dp"
+                                    android:visibility="gone">
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_bookid_label_trip_summary4"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/visit_fare_vf"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="@color/black"
+
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=":"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_est_fare_visit_fare_label"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_weight="1"
+                                        android:gravity="end|center_vertical"
+                                        android:text="$10"
+                                        android:textAlignment="viewEnd"
+                                        android:textColor="@color/black"
+
+                                        android:textSize="14sp" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="5dp">
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_bookid_label_trip_summary_1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/price_per_km_ppkm"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="@color/black"
+
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=":"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_est_fare_price_per_km_label"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_weight="1"
+
+                                        android:gravity="end|center_vertical"
+                                        android:text="$12"
+                                        android:textAlignment="viewEnd"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="5dp">
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_bookid_label_trip_summary_2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/est_distance_ed"
+                                        android:textAlignment="viewStart"
+
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=":"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_est_fare_distance_label"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_weight="1"
+                                        android:gravity="end|center_vertical"
+                                        android:text="10KM"
+                                        android:textAlignment="viewEnd"
+
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="5dp">
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_bookid_label_trip_summary_3"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/est_distance_calculate_edc"
+
+                                        android:textAlignment="viewStart"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=":"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_est_fare_distance_cal_label"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_weight="1"
+
+                                        android:gravity="end|center_vertical"
+                                        android:text="$12 * 10KM = 12KM"
+                                        android:textAlignment="viewEnd"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+                                </TableRow>
+
+                                <View
+                                    android:id="@+id/view1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:background="#a1a1a1" />
+
+
+                            </TableLayout>
+
+
+                            <!--
+                                                    <com.instaguard.user.CustomViews.CustomTextView
+                                                        android:id="@+id/tv_est_fare_base_fare_label"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginBottom="0dp"
+                                                        android:layout_marginEnd="15dp"
+                                                        android:layout_alignParentEnd="true"
+                                                         android:gravity="center|center_vertical|center_horizontal|end"
+                                                        android:text="Base fare : $ 10"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="16sp" />
+
+
+                                                    <com.instaguard.user.CustomViews.CustomTextView
+                                                        android:id="@+id/tv_est_fare_price_per_km_label"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginStart="10dp"
+                                                        android:layout_alignParentEnd="true"
+                                                        android:layout_marginEnd="15dp"
+                                                        android:layout_marginBottom="10dp"
+                                                        android:layout_below="@+id/tv_est_fare_base_fare_label"
+                                                        android:gravity="center|center_vertical|center_horizontal|end"
+                                                        android:text="Price per km : $ 1"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="16sp" />
+
+                                                    <com.instaguard.user.CustomViews.CustomTextView
+                                                        android:id="@+id/tv_est_fare_distance_label"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="0dp"
+                                                        android:layout_marginBottom="0dp"
+                                                        android:layout_marginEnd="15dp"
+                                                        android:layout_alignParentEnd="true"
+                                                        android:layout_below="@+id/tv_est_fare_price_per_km_label"
+                                                        android:layout_toStartOf="@+id/tv_fare_amount"
+                                                        android:gravity="center|center_vertical|center_horizontal|end"
+                                                        android:text="Est Distance :"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="16sp" />
+
+                                                    <com.instaguard.user.CustomViews.CustomTextView
+                                                        android:id="@+id/tv_est_fare_label"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginBottom="10dp"
+                                                        android:layout_below="@+id/tv_est_fare_distance_label"
+                                                        android:layout_toStartOf="@+id/tv_fare_amount"
+                                                        android:gravity="center|center_vertical|center_horizontal|end"
+                                                        android:text="Est fare amount :"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="16sp" />
+
+                                                    <com.instaguard.user.CustomViews.CustomTextView
+                                                        android:id="@+id/tv_fare_amount"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_alignParentEnd="true"
+                                                        android:layout_marginEnd="15dp"
+                                                        android:layout_marginTop="10dp"
+                                                        android:layout_marginStart="10dp"
+                                                        android:layout_marginBottom="10dp"
+                                                        android:layout_below="@+id/tv_est_fare_distance_label"
+                                                        android:gravity="center|center_vertical|center_horizontal|end"
+                                                        android:text="test"
+                                                        android:textColor="@color/colorPrimary"
+                                                        android:textSize="16sp" />
+                            -->
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_level_est_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rl_fare_est_amount"
+                            android:visibility="gone">
+
+                            <View
+                                android:id="@+id/view3"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="#a1a1a1" />
+
+                            <TableLayout
+                                android:id="@+id/table_two"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/view3"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="15dp">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="5dp">
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_est_level_label"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/est_level_amount"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=":"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="15sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_level_amount"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_weight="1"
+
+                                        android:gravity="end|center_vertical"
+                                        android:text="subway * level = $10"
+                                        android:textAlignment="viewEnd"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+                                </TableRow>
+
+                                <View
+                                    android:id="@+id/view5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:background="#a1a1a1" />
+
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="5dp">
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_basefare_main_level_label"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/base_fare"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="@color/black"
+
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=":"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_basefare_main_level_amount"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_weight="1"
+                                        android:gravity="end|center_vertical"
+                                        android:text="$10"
+                                        android:textAlignment="viewEnd"
+
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="5dp">
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_basefare_sub_level_label"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/base_fare"
+                                        android:textAlignment="viewStart"
+
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=":"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_basefare_sub_level_amount"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+
+                                        android:layout_weight="1"
+                                        android:gravity="end|center_vertical"
+                                        android:text="$10"
+                                        android:textAlignment="viewEnd"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:id="@+id/tr_visit_fare_level"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="5dp"
+                                    android:visibility="gone">
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_visitfare_sub_level_label"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/visit_fare_vf"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=":"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <com.instaguard.user.CustomViews.CustomTextView
+                                        android:id="@+id/tv_visitfare_sub_level_amount"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_weight="1"
+                                        android:gravity="end|center_vertical"
+                                        android:text="$10"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+                                </TableRow>
+
+                                <View
+                                    android:id="@+id/view4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:background="#a1a1a1" />
+
+
+                            </TableLayout>
+                            <!-- <com.instaguard.user.CustomViews.CustomTextView
+                                 android:id="@+id/tv_est_level_label"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="10dp"
+                                 android:layout_marginBottom="10dp"
+                                 android:layout_toStartOf="@+id/tv_level_amount"
+                                 android:gravity="center|center_vertical|center_horizontal|end"
+                                 android:text="Est level amount :"
+                                 android:textColor="@color/black"
+                                 android:textSize="16sp" />
+
+                             <com.instaguard.user.CustomViews.CustomTextView
+                                 android:id="@+id/tv_level_amount"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignParentEnd="true"
+                                 android:layout_margin="10dp"
+                                 android:gravity="center|center_vertical|center_horizontal|end"
+                                 android:text=""
+                                 android:textColor="@color/colorPrimary"
+                                 android:textSize="16sp" />-->
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txt_select_service_label"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <RadioGroup
+
+                                android:id="@+id/rg_selcet_category"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="15dp"
+                                android:divider="@color/bg_gray_common"
+                                android:dividerPadding="1dp"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                            </RadioGroup>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_booknw_bookltr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    tools:ignore="UselessParent">
+
+                    <com.instaguard.user.CustomViews.CustomButton
+                        android:id="@+id/btn_booklater"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rect_filled_booknowlater_unselect"
+                        android:text="@string/book_later"
+                        android:textColor="@color/black" />
+
+                    <com.instaguard.user.CustomViews.CustomButton
+                        android:id="@+id/btn_booknow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rect_filled_booknowlater_unselect"
+                        android:text="@string/book_now"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <include
+                    android:id="@+id/rl__g"
+                    layout="@layout/layout_google_ads_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_sub_category"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

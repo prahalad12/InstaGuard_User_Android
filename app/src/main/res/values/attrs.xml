@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CountryCodePicker">
+        <attr name="defaultCode" format="integer" />
+        <attr name="contentColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="arrowSize" format="dimension"/>
+        <attr name="countryPreference" format="string"/>
+        <attr name="defaultNameCode" format="string" />
+        <attr name="hideNameCode" format="boolean"/>
+        <attr name="ccpLanguage" format="enum">
+            <enum name="ARABIC" value="1"/>
+            <enum name="BENGALI" value="2"/>
+            <enum name="CHINESE" value="3"/>
+            <enum name="ENGLISH" value="4"/>
+            <enum name="FRENCH" value="5"/>
+            <enum name="GERMAN" value="6"/>
+            <enum name="GUJARATI" value="7"/>
+            <enum name="HINDI" value="8"/>
+            <enum name="JAPANESE" value="9"/>
+            <enum name="JAVANESE" value="10"/>
+            <enum name="PORTUGUESE" value="11"/>
+            <enum name="RUSSIAN" value="12"/>
+            <enum name="SPANISH" value="13"/>
+        </attr>
+        <attr name="keyboardAutoPopOnSearch" format="boolean"/>
+        <attr name="customMasterCountries" format="string" />
+    </declare-styleable>
+    <declare-styleable name="ColorRatingBar">
+        <attr name="progress_color" format="color"/>
+        <attr name="half_color" format="color"/>
+        <attr name="empty_color" format="color"/>
+        <attr name="changeable" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="RippleBackground">
+        <attr name="rb_color" format="color" />
+        <attr name="rb_strokeWidth" format="dimension"/>
+        <attr name="rb_radius" format="dimension"/>
+        <attr name="rb_duration" format="integer"/>
+        <attr name="rb_rippleAmount" format="integer"/>
+        <attr name="rb_scale" format="float"/>
+        <attr name="rb_type" format="enum">
+            <enum name="fillRipple" value="0"/>
+            <enum name="strokeRipple" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SimpleRatingBar">
+        <attr name="srb_borderColor" format="color" />
+        <attr name="srb_fillColor" format="color" />
+        <attr name="srb_backgroundColor" format="color" />
+        <attr name="srb_starBackgroundColor" format="color" />
+        <attr name="srb_pressedBorderColor" format="color" />
+        <attr name="srb_pressedFillColor" format="color" />
+        <attr name="srb_pressedBackgroundColor" format="color" />
+        <attr name="srb_pressedStarBackgroundColor" format="color" />
+        <attr name="srb_numberOfStars" format="integer" />
+        <attr name="srb_starSize" format="dimension" />
+        <attr name="srb_maxStarSize" format="dimension" />
+        <attr name="srb_starsSeparation" format="dimension" />
+        <attr name="srb_starBorderWidth" format="float" />
+        <attr name="srb_starCornerRadius" format="float" />
+        <attr name="srb_isIndicator" format="boolean" />
+        <attr name="srb_rating" format="float" />
+        <attr name="srb_stepSize" format="float" />
+        <attr name="srb_drawBorderEnabled" format="boolean" />
+        <attr name="srb_gravity" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="HorizontalCalendarView">
+        <!-- Default text color for all texts -->
+        <attr name="textColorNormal" format="color" />
+        <!-- Default top text color -->
+        <attr name="colorTopText" format="color" />
+        <!-- Default Middle text color -->
+        <attr name="colorMiddleText" format="color" />
+        <!-- Default Bottom text color -->
+        <attr name="colorBottomText" format="color" />
+
+        <!-- Selected item's text color for all texts -->
+        <attr name="textColorSelected" format="color" />
+        <!-- Selected item's top text color -->
+        <attr name="colorTopTextSelected" format="color" />
+        <!-- Selected item's Middle text color -->
+        <attr name="colorMiddleTextSelected" format="color" />
+        <!-- Selected item's Bottom text color -->
+        <attr name="colorBottomTextSelected" format="color" />
+        <!-- Selected item's background drawable -->
+        <attr name="selectedDateBackground" format="reference" />
+
+        <!-- Background color for selector bar. -->
+        <attr name="selectorColor" format="color" />
+
+        <!-- Top text size -->
+        <attr name="sizeTopText" format="dimension" />
+        <!-- Middle text size -->
+        <attr name="sizeMiddleText" format="dimension" />
+        <!-- Bottom text size -->
+        <attr name="sizeBottomText" format="dimension" />
+
+    </declare-styleable>
+
+    <declare-styleable name="ToggleSwitchOptions">
+        <attr name="toggleWidth"        format="dimension"/>
+
+        <attr name="textToggleCenter"   format="string" localization="suggested" />
+        <attr name="textToggleLeft"     format="string" localization="suggested" />
+        <attr name="textToggleRight"    format="string" localization="suggested" />
+
+        <attr name="activeBgColor"      format="color"/>
+        <attr name="activeTextColor"    format="color"/>
+        <attr name="inactiveBgColor"    format="color"/>
+        <attr name="inactiveTextColor"  format="color"/>
+        <attr name="separatorColor"     format="color"/>
+
+        <attr name="cornerRadius"       format="dimension"/>
+
+        <attr name="android:textSize"/>
+    </declare-styleable>
+
+</resources>

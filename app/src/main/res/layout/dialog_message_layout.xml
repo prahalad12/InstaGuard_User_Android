@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg_cover">
+
+    <com.instaguard.user.CustomViews.CustomTextView
+        android:id="@+id/tv_title"
+        style="@style/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/adding_to_favorite"/>
+
+    <com.instaguard.user.CustomViews.CustomTextView
+        android:id="@+id/tv_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24sp"
+        android:textSize="15sp"
+        android:textColor="@color/text_color_dark"
+        android:background="@color/dialog_bg_color"
+        android:text="@string/my_message"/>
+
+    <FrameLayout
+        android:id="@+id/dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_below="@id/tv_message"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.instaguard.user.CustomViews.CustomButton
+            android:id="@+id/btn_negative"
+            style="@style/dialog_button_negative"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:textSize="15sp"
+            android:text="@string/cancel"/>
+
+        <com.instaguard.user.CustomViews.CustomButton
+            android:id="@+id/btn_positive"
+            style="@style/dialog_button_positive"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:visibility="visible"
+            android:text="@string/yes"/>
+    </LinearLayout>
+</LinearLayout>

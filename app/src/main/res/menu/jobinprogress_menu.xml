@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group >
+        <item android:id="@+id/call_job"
+            android:title="@string/call"
+            android:orderInCategory="1"
+             android:titleCondensed="Options"
+            />
+        <item android:id="@+id/msg_job"
+            android:title="@string/message"
+            android:orderInCategory="1"
+            android:titleCondensed="Options"
+            />
+        <item android:id="@+id/livetrack_job"
+            android:title="@string/live_track"
+            android:orderInCategory="1"
+            android:visible="false"
+            android:titleCondensed="Options"
+            />
+        <item android:id="@+id/sos_job"
+            android:title="@string/sos"
+            android:visible="false"
+            android:orderInCategory="1"
+            android:titleCondensed="Options"
+            />
+        <item android:id="@+id/cancel_job"
+            android:title="@string/cancel_job"
+            android:orderInCategory="1"
+            android:visible="true"
+            android:titleCondensed="Options"
+            />
+    </group>
+</menu>

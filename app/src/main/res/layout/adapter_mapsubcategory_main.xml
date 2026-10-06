@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="100dp"
+    android:layout_height="105dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_category_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:id="@+id/img_category_bg"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:contentDescription="@string/todo" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/img_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/img_category_bg"
+            android:layout_alignTop="@+id/img_category_bg"
+            android:layout_alignEnd="@+id/img_category_bg"
+            android:layout_alignBottom="@+id/img_category_bg"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            app:actualImageScaleType="none"
+            app:failureImage="@drawable/logo"
+            app:placeholderImage="@drawable/logo" />
+
+    </RelativeLayout>
+
+    <com.instaguard.user.CustomViews.CustomTextView
+        android:id="@+id/txt_category_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_category_image"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="@string/category_name"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColor="#000"
+        android:textSize="12sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:weightSum="2"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.8"
+            android:gravity="center|start"
+            android:paddingStart="10dp"
+            android:paddingEnd="5dp"
+            android:id="@+id/txt_base_fare_label"
+            android:text="Base Fare"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="normal" />
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1.2"
+            android:gravity="center|start"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="10.00"
+            android:id="@+id/txt_base_fare"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

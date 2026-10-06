@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar_ride_history"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_toolbar_gradient">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imgbtn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:background="@null"
+                android:padding="10dp"
+                style="@style/AppThemeToolBar"
+                android:src="@drawable/ic_back_whitearrow"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/imgbtn_backs"
+                style="@style/AppThemeToolBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imgbtn_back"
+                android:layout_alignBottom="@+id/imgbtn_back"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:background="@null"
+                android:padding="10dp"
+                android:src="@drawable/ic_nav_setting"
+                android:visibility="visible"
+                tools:ignore="ContentDescription" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_signin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imgbtn_backs"
+                android:layout_alignBottom="@+id/imgbtn_backs"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_toStartOf="@+id/imgbtn_backs"
+                android:layout_toEndOf="@+id/imgbtn_back"
+                 android:text="@string/notifications_header"
+                 style="@style/AppThemeToolBar"
+                tools:ignore="MissingPrefix,RtlHardcoded" />
+
+        </RelativeLayout>
+    </android.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_ride_history"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/rltop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/layout_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:weightSum="2"
+                app:elevation="0dp">
+
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:elevation="0dp"
+                    android:paddingTop="3dp"
+                    android:visibility="visible"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="@color/colorPrimaryDark"
+                    app:tabIndicatorHeight="1dp"
+                    app:tabMode="fixed"
+                    app:tabSelectedTextColor="@color/colorPrimaryDark"
+                    app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+                    app:tabTextColor="#ccc" />
+
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rltop"
+            android:background="@drawable/bg_tab_whiteshape">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+

@@ -1,0 +1,177 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/destination_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".Fragments.PlacesAutoCompleteFragment">
+
+    <RelativeLayout
+        android:id="@+id/rl_parent_lyt_place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <android.widget.Toolbar
+            android:id="@+id/toolbar_placesautocomplete"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_toolbar_gradient">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow"
+                    tools:ignore="ContentDescription" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_backs"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow"
+                    android:visibility="invisible"
+                    tools:ignore="ContentDescription" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_toolbartitle"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_backs"
+                    android:layout_alignBottom="@+id/imgbtn_backs"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toStartOf="@+id/imgbtn_backs"
+                    android:layout_toEndOf="@+id/imgbtn_back"
+                    android:gravity="start|center"
+                    android:text="@string/map_enter_pickup_location"
+                    tools:ignore="MissingPrefix,RtlHardcoded" />
+
+            </RelativeLayout>
+
+        </android.widget.Toolbar>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_placesautocomplete_parent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/toolbar_placesautocomplete"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="-20dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            card_view:cardBackgroundColor="@android:color/white"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardElevation="10dp">
+
+            <RelativeLayout
+                android:id="@+id/rl_placesautocomplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_inputsearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_search_black" />
+
+                <EditText
+                    android:id="@+id/edt_placesautocomplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_toStartOf="@+id/imgbtn_clear"
+                    android:layout_toEndOf="@+id/imgbtn_inputsearch"
+                    android:background="@android:color/transparent"
+                    android:gravity="start|center"
+                    android:hint="@string/map_enter_pickup_location"
+                    android:imeOptions="actionDone"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="15sp" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_close_black" />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_placesearchlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cv_placesautocomplete_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:animateLayoutChanges="true">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_placesautocomplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                card_view:cardBackgroundColor="@android:color/white"
+                card_view:cardCornerRadius="5dp"
+                card_view:cardElevation="5dp"
+                tools:targetApi="lollipop">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_placesautocomplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:scrollbars="none" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/cv_placesautocomplete"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:src="@drawable/img_poweredbygoogle"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

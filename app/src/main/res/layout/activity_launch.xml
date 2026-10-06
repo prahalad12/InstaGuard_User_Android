@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <com.instaguard.user.Helpers.MutedVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:focusable="false"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/placeholder"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:visibility="gone" />
+
+    <com.instaguard.user.CustomViews.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:text=""
+        android:textAllCaps="true"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColor="#ededed"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/splashlogo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/splashlogo_"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:contentDescription="@string/todo"
+        android:gravity="center"
+        android:padding="5dp"
+        android:src="@drawable/logo_trans"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/splashlogo_"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/progress_bar"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:contentDescription="@string/todo"
+            android:gravity="center"
+            android:padding="12dp"
+            android:visibility="visible" />
+
+        <!--android:src="@drawable/logo_bottom_new"-->
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="@string/www_site_url"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="italic|bold" />
+
+
+    </RelativeLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/MyProgressBar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="50dp"
+        android:visibility="visible" />
+
+    <com.instaguard.user.CustomViews.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/splashlogo_"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="@string/user"
+        android:textAllCaps="true"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:visibility="visible" />
+
+    <!-- <include layout="@layout/layout_lowinternet" />-->
+
+
+    <RelativeLayout
+        android:id="@+id/_rl_face_finger_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9AD8D4D4"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_rect_top_curve_finger"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/logo" />
+
+            <LinearLayout
+                android:id="@+id/_ll_face_finger_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_finger_print_"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/todo"
+                    android:gravity="center"
+                    android:src="@drawable/ic_round_fingerprint_24"
+                    android:visibility="gone" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/iv_finger_print"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="security_lock.json"
+                    app:lottie_loop="true" />
+                <!-- app:lottie_repeatCount="5"-->
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/iv_face_print"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="face.json"
+                    app:lottie_loop="true" />
+                <!--app:lottie_repeatCount="5"-->
+
+                <ImageView
+                    android:id="@+id/iv_face_print_"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/todo"
+                    android:gravity="center"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bg_rect_filled_colorprimary"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/todo"
+                android:drawableEnd="@drawable/ic_baseline_chevron_right_24"
+                android:drawablePadding="5dp"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/biometric_verify"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp"
+                android:textStyle="normal"
+                android:visibility="visible"
+                tools:targetApi="m" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

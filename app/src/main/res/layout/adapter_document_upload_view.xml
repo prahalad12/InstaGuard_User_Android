@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginBottom="5sp"
+        android:elevation="5dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="4dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_id_proof_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_idproof"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignTop="@+id/img_idproof_signup"
+                android:layout_alignBottom="@+id/img_idproof_signup"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_toStartOf="@+id/img_idproof_signup"
+                android:gravity="center|start"
+                android:padding="5dp"
+                android:text="@string/add_documents"
+                android:textAlignment="viewStart"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black" />
+
+            <WebView
+                android:id="@+id/img_idproof_signup"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/bg_gray_common"
+                app:failureImage="@drawable/ic_document_proof"
+                app:placeholderImage="@drawable/ic_document_proof"
+                app:placeholderImageScaleType="fitXY"
+                tools:ignore="WebViewLayout" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/img_idproof_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/bg_gray_common"
+                android:visibility="visible"
+                app:failureImage="@drawable/ic_document_proof"
+                app:placeholderImage="@drawable/ic_document_proof"
+                app:placeholderImageScaleType="fitXY" />
+            <com.instaguard.user.CustomViews.CustomEditText
+                android:id="@+id/edt_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_idproof"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toStartOf="@+id/img_ok"
+                android:focusableInTouchMode="false"
+                android:hint="@string/expiry_date"
+                android:visibility="gone"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelAlwaysShown="false"
+                app:met_floatingLabelAnimating="true"
+                app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                app:met_textColor="@color/black"
+                app:met_textColorHint="@color/colorPrimary" />
+
+            <com.instaguard.user.CustomViews.CustomButton
+                android:id="@+id/img_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@+id/txt_idproof"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/bg_rect_filled_colorprimary"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:text="@string/update_record"
+                android:textColor="@color/white" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edt_date"
+                android:layout_alignParentStart="true"
+                android:background="@color/text_color_dark"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/manage_document_title"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                android:visibility="visible" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_status"
+                android:layout_alignParentStart="true"
+                android:background="@color/holo_red_dark"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/manage_document_title"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
+
+

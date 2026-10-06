@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="horizontal">
+
+    <com.instaguard.user.Helpers.CustomCheckButton.CheckableButton
+        android:id="@+id/cb_timeslot"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:background="@drawable/checkable_selector_time"
+        android:text="Click1"
+        android:visibility="gone"
+        android:layout_margin="5dp"
+        android:textColor="@drawable/checkable_text_color"
+        android:textSize="14sp" />
+    <RadioButton
+        android:id="@+id/rb_timeslot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_radiobutton"
+        android:button="@android:color/transparent"
+        android:checked="true"
+        android:text="01-02 AM" />
+</LinearLayout>

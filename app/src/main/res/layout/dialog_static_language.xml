@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/transparent"
+    android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_margin="16dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_toolbar_gradient"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_black"
+            android:foregroundGravity="center"
+            android:padding="7dp"
+            android:visibility="gone"
+            android:layout_alignParentEnd="true"/>
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_language_title"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:padding="10dp"
+            android:id="@+id/txt_select_language"
+            style="@style/AppThemeToolBarCenter"
+            android:background="@drawable/bg_toolbar_gradient"
+             android:textSize="16sp"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/txt_select_language"
+            android:background="@android:color/white"
+            />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_margin="2dp"
+            android:padding="8dp"
+            android:background="@color/white"
+            android:layout_below="@+id/txt_select_language"
+            android:id="@+id/rcv_language" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll_static_language"
+            android:visibility="gone"
+            android:layout_below="@+id/txt_select_language"
+            android:orientation="vertical">
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:padding="10dp"
+            android:id="@+id/txt_english"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+             android:gravity="center"/>
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Swahili"
+            android:id="@+id/txt_swahili"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:gravity="center"/>
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="French"
+            android:id="@+id/txt_french"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:gravity="center"/>
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Spanish"
+            android:id="@+id/txt_spanish"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:gravity="center"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_parent_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_gray_common">
+
+        <android.widget.Toolbar
+            android:id="@+id/toolbar_ongoingjobs"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_toolbar_gradient">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow"
+                    tools:ignore="ContentDescription" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_backs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow"
+                    android:visibility="invisible"
+                    tools:ignore="ContentDescription" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_ongoingjobs"
+                    style="@style/AppThemeToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_backs"
+                    android:layout_alignBottom="@+id/imgbtn_backs"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toStartOf="@+id/imgbtn_backs"
+                    android:layout_toEndOf="@+id/imgbtn_back"
+                    android:gravity="start|center"
+                    android:text="@string/ongoingjobs_header"
+                    tools:ignore="MissingPrefix,RtlHardcoded" />
+
+            </RelativeLayout>
+
+        </android.widget.Toolbar>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rl__g"
+            android:layout_below="@+id/toolbar_ongoingjobs">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_top_image_slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+
+                        <include
+                            android:id="@+id/view_image_slider"
+                            layout="@layout/layout_image_slider_main"
+                            android:visibility="visible" />
+
+                        <RelativeLayout
+                            android:id="@+id/rl_emptyview_announcement"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/gray_very_light"
+                                android:contentDescription="@string/todo" />
+
+                            <ImageView
+                                android:layout_width="95dp"
+                                android:layout_height="95dp"
+                                android:layout_centerInParent="true"
+                                android:layout_centerHorizontal="true"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/logo_circle" />
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/empty_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:gravity="center"
+                                android:paddingBottom="5dp"
+                                android:text="@string/no_result_found"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+                                android:visibility="visible" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_ongoingjobs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:visibility="visible"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_emptyview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="50dp"
+                        android:visibility="gone">
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:text="@string/no_ongoing_jobs_available"
+                            android:textColor="@color/black" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <include
+            android:id="@+id/rl__g"
+            layout="@layout/layout_google_ads_view"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

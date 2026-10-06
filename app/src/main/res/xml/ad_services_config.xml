@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ad-services-config>
+    <!-- Attribution API -->
+    <attribution allowAllToAccess="true" />
+
+    <!-- Topics API -->
+    <topics allowAllToAccess="true" />
+
+    <!-- Protected Audience on Android API -->
+    <custom-audiences allowAllToAccess="true" />
+
+    <!-- Attribution API -->
+    <attribution allowAdPartnersToAccess="ENROLLMENT-ID" allowAllToAccess="false" />
+
+    <!-- Topics API →-->
+    <includes-sdk-library name="ENROLLMENT-ID" />
+    <topics allowAdPartnersToAccess="ENROLLMENT-ID" allowAllToAccess="false" />
+
+    <!-- Protected Audience on Android API -->
+    <custom-audiences allowAdPartnersToAccess="ENROLLMENT-ID" allowAllToAccess="false" />
+
+</ad-services-config>

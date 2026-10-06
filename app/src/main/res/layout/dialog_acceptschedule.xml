@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/darker_gray"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/reqRelView_dialog_acceptschedule"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="15dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/img_accept"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/logo" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_accept"
+                android:gravity="center_horizontal"
+                android:text="@string/scheduled_trip_accept_provider_booking_received"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+
+                />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_header"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center_horizontal"
+                android:text="@string/scheduled_trip_accept_provider_driver_has_received_the_booking_request_and_will_get_back_to_you_shortly_you_can_check_out_the_status_of_your_request_on_the_your_jobs_menu_item"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_description"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:background="@color/white">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_viewbooking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="0dp"
+                    android:background="@drawable/bg_rect_filled_colorprimary"
+                    android:gravity="end"
+                    android:padding="10dp"
+                    android:text="@string/scheduled_trip_accept_provider_view_bookings"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_cancel_schedule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_toStartOf="@+id/txt_viewbooking"
+                    android:gravity="end"
+                    android:padding="10dp"
+                    android:text="@string/scheduled_trip_accept_provider_cancel"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16dp"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

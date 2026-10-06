@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_adapter_wallet"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10.0dip"
+        app:cardBackgroundColor="#ffffffff">
+
+        <LinearLayout
+            android:id="@+id/contentArea"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5.0dip">
+
+            <LinearLayout
+                android:id="@+id/detailExpandArea"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_credit_debit_img"
+                    android:layout_width="20.0dip"
+                    android:layout_height="20.0dip"
+                    android:contentDescription="@string/todo"
+                    android:src="@mipmap/ic_credit" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_transaction_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="5.0dip"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="@string/app_name"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff000000"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_transaction_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:layout_weight="1"
+                    android:gravity="end|center"
+                    android:maxLength="11"
+                    android:maxLines="1"
+                    android:text="@string/app_name"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#ff767676"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transactionDetailArea"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25.0dip"
+                android:layout_marginBottom="5dip"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_transaction_bookingid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5.0dip"
+                    android:gravity="start|center|top"
+                    android:minLines="1"
+                    android:text="@string/app_name"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff323232"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_transaction_mode"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_marginEnd="7.0dip"
+                    android:gravity="start|center"
+                    android:maxLines="1"
+                    android:text="@string/nav_mywallet"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff767676"
+                    android:textSize="12.0sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

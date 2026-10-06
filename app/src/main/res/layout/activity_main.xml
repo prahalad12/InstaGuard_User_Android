@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        android:id="@+id/lyt_main_category"
+        layout="@layout/layout_map"
+        android:visibility="visible" />
+
+    <include
+        android:id="@+id/lyt_map_main"
+        layout="@layout/layout_map_main"
+        android:visibility="visible" />
+
+    <include
+        android:id="@+id/lyt_job_inprogress"
+        layout="@layout/layout_job_inprogress"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activities.MainActivity">
+
+        <FrameLayout
+            android:id="@+id/frame_mainactivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/lyt_sms_alert"
+        layout="@layout/layout_sms_alert"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_dialog_acceptprovider"
+        layout="@layout/dialog_acceptprovider"
+        android:visibility="gone" />
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationview"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:theme="@style/NavigationTheme"
+        app:headerLayout="@layout/navigation_header"
+        app:itemHorizontalPadding="20dp"
+        app:itemIconPadding="20dp"
+        app:itemIconTint="@color/colorPrimaryDark"
+        app:itemTextAppearance="@style/NavDrawerTextStyle"
+        app:menu="@menu/drawer_menu">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_signout_customer"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bg_toolbar_gradient_bottom_top"
+                android:padding="15dp">
+
+                <ImageView
+                    android:id="@+id/img_logout"
+                    style="@style/AppThemeNavDrawerHeaderFooter"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@mipmap/ic_menu_logout" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_logout"
+                    style="@style/AppThemeNavDrawerHeaderFooter"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@+id/img_logout"
+                    android:foregroundGravity="center"
+                    android:gravity="center|start"
+                    android:paddingStart="20dp"
+                    android:text="@string/nav_logout"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textStyle="bold" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_version"
+                    style="@style/AppThemeNavDrawerHeaderFooter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/img_logout"
+                    android:layout_alignBottom="@+id/img_logout"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center"
+                    android:text="@string/v1_0_0"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+

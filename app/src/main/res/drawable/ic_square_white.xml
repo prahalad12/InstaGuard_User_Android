@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <rotate android:fromDegrees="90.0">
+            <shape
+              xmlns:android="http://schemas.android.com/apk/res/android">
+                <stroke android:width="2.0dip" android:color="#4bd6d6d6" />
+                <solid android:color="#323232" />
+                <padding android:left="1.0dip" android:top="1.0dip" android:right="1.0dip" android:bottom="1.0dip" />
+            </shape>
+        </rotate>
+    </item>
+</selector>

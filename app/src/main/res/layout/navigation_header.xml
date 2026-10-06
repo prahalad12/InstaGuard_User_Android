@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_toolbar_gradient"
+    android:paddingStart="8dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="5dp"
+    android:paddingBottom="5dp">
+
+    <RelativeLayout
+        android:id="@+id/rl_mainnavigationheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:paddingTop="5dp"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:id="@+id/img_nav_setting"
+            style="@style/AppThemeNavDrawerHeaderFooter"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/todo"
+            android:padding="5dp"
+            android:src="@drawable/ic_refresh_black_24dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_navigationheader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingBottom="15dp">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/img_nav_profileimage"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@drawable/logo_circle_overlay"
+                android:contentDescription="@string/todo" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_nav_user_name"
+                style="@style/AppThemeNavDrawerHeaderFooter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/img_nav_profileimage"
+                android:maxLines="1"
+                android:paddingStart="10dp"
+                android:paddingTop="0dp"
+                android:text="@string/app_name" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_nav_user_id"
+                style="@style/AppThemeNavDrawerHeaderFooter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rb_nav_user_rating"
+                android:layout_alignStart="@+id/txt_nav_user_name"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:text="@string/id_"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textSize="13sp"
+                android:visibility="visible" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_subscribed_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_nav_user_id"
+                android:layout_alignStart="@+id/txt_nav_user_name"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_rect_cp_curve_plan"
+                android:backgroundTint="@android:color/holo_green_dark"
+                android:gravity="center"
+                android:paddingStart="5dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="5dp"
+                android:paddingBottom="3dp"
+                android:text="@string/forgetpassword_submit"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <com.instaguard.user.Helpers.RatingBar.SimpleRatingBar
+                android:id="@+id/rb_nav_user_rating"
+                style="@style/AppThemeNavDrawerHeaderFooter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_nav_user_name"
+                android:layout_alignStart="@+id/txt_nav_user_name"
+                android:layout_gravity="start"
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                app:srb_borderColor="@color/bg_gray_common"
+                app:srb_fillColor="@color/colorPrimaryDark"
+                app:srb_isIndicator="true"
+                app:srb_numberOfStars="5"
+                app:srb_rating="4.5"
+                app:srb_starBorderWidth="1.5"
+                app:srb_starSize="15.0sp"
+                app:srb_starsSeparation="2dp"
+                app:srb_stepSize="0.1" />
+
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_nav_walletbalance"
+                style="@style/AppThemeNavDrawerHeaderFooter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_nav_profileimage"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/img_nav_profileimage"
+                android:maxLines="1"
+                android:paddingStart="0dp"
+                android:paddingEnd="5dp"
+                android:singleLine="true"
+                android:text="Wallet Balance: $0.00"
+                android:textAlignment="viewStart"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:visibility="gone"
+                tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/rl_navigationheader"
+            android:background="@color/black"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_aboutus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10.0dip"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="32.0dip"
+            android:layout_height="32.0dip"
+            android:layout_marginStart="5dp"
+            android:clickable="false"
+            android:contentDescription="@string/todo"
+            android:padding="3dp"
+            android:src="@mipmap/ic_menu_help"
+            android:visibility="gone"
+            app:tint="#8A8989" />
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:id="@+id/txt_aboutus_"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1.0"
+            android:clickable="false"
+            android:drawableEnd="@drawable/ic_baseline_chevron_right_24"
+            android:drawablePadding="5dp"
+            android:gravity="start|center"
+            android:paddingStart="10.0dip"
+            android:paddingTop="2.5dip"
+            android:paddingEnd="10.0dip"
+            android:paddingBottom="2.5dip"
+            android:text="@string/com_facebook_loading"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.4dip"
+        android:layout_below="@+id/ll_aboutus"
+        android:background="#ff000000" />
+
+
+</RelativeLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/transparent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_margin="16dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_toolbar_gradient"
+        android:layout_centerInParent="true">
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_currency_title"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:padding="10dp"
+            android:background="@drawable/bg_toolbar_gradient"
+            android:id="@+id/txt_select_currency"
+            style="@style/AppThemeToolBarCenter"
+            android:textSize="16sp"
+            android:gravity="center" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_black"
+            android:foregroundGravity="center"
+            android:padding="7dp"
+            android:visibility="gone"
+            style="@style/AppThemeToolBar"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/todo" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/txt_select_currency"
+            android:background="@android:color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_margin="2dp"
+            android:padding="8dp"
+            android:background="@color/white"
+            android:layout_below="@+id/txt_select_currency"
+            android:id="@+id/rcv_currency" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll_static_currency"
+            android:visibility="gone"
+            android:layout_below="@+id/txt_select_currency"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LKR"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:padding="10dp"
+                    android:id="@+id/txt_usd"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CHF"
+                    android:id="@+id/txt_chf"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="EUR"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:padding="10dp"
+                    android:id="@+id/txt_eur"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NGN"
+                    android:id="@+id/txt_ngs"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

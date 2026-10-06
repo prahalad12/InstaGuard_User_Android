@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusableInTouchMode="false"
+    android:visibility="visible"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_parent_lyt_payment_paynow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:background="@color/colorWhite"
+            android:elevation="10dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="false">
+
+                <ImageView
+                    android:id="@+id/got_paynow_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_alignTop="@+id/img_close_paynow"
+                    android:layout_alignBottom="@+id/img_close_paynow"
+                    android:layout_gravity="center"
+                    android:layout_toStartOf="@+id/iv_menu_drag_paynow"
+                    android:layout_toEndOf="@+id/img_close_paynow"
+                    android:contentDescription="@string/todo"
+                    android:padding="0dp"
+                    android:src="@drawable/stripe_logo_logotyp_us" />
+
+                <ImageView
+                    android:id="@+id/img_close_paynow"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignTop="@+id/iv_menu_drag_paynow"
+                    android:layout_alignBottom="@+id/iv_menu_drag_paynow"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="0dp"
+                    android:background="@drawable/ic_circle_elevation_white"
+                    android:contentDescription="@string/todo"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_close_black"
+                    android:visibility="visible"
+                    app:tint="#9E9E9E" />
+
+                <ImageView
+                    android:id="@+id/iv_menu_drag_paynow"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/ic_circle_elevation_white"
+                    android:contentDescription="@string/todo"
+                    android:padding="10dp"
+                    android:visibility="invisible"
+                    app:tint="#9E9E9E" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--        app:layout_constraintTop_toBottomOf="@+id/rl_parent_lyt"
+    -->
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/cv_top"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:hint="@string/please_wait_don_t_close_the_page_while_loading" />
+
+        <ImageView
+            android:id="@+id/got_paynow"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_rect_border"
+            android:contentDescription="@string/todo"
+            android:padding="10dp"
+            android:src="@drawable/logo"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/cv_top"
+            android:layout_margin="6dp"
+            android:background="@color/colorWhite"
+            android:fillViewport="true"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:visibility="visible"
+            tools:ignore="UselessParent">
+
+            <!--<LinearLayout
+                android:layout_height="@dimen/_180sdp"
+                android:layout_width="match_parent"
+                android:orientation="vertical">-->
+
+            <WebView
+                android:id="@+id/webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!-- </LinearLayout>-->
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/progressBar_paynow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="10dp">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_circle_elevation_white"
+                android:padding="6dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+    <!-- </androidx.constraintlayout.widget.ConstraintLayout>
+
+ </androidx.coordinatorlayout.widget.CoordinatorLayout>-->

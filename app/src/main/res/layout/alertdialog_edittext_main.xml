@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.instaguard.user.CustomViews.CustomEditText
+        android:id="@+id/edt_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/enter_tell_us_emeregency"
+        android:imeOptions="actionNext"
+        android:maxLength="25"
+        android:minLines="1"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:singleLine="true"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:met_baseColor="@color/colorPrimary"
+        app:met_clearButton="true"
+        app:met_errorColor="@android:color/holo_red_dark"
+        app:met_floatingLabel="none"
+
+        app:met_floatingLabelAlwaysShown="false"
+        app:met_floatingLabelAnimating="false"
+        app:met_floatingLabelText="@string/please_tell_us_emergency"
+        app:met_floatingLabelTextColor="@color/colorPrimary"
+        app:met_helperTextColor="@color/colorPrimary"
+        app:met_primaryColor="@color/colorPrimary"
+        app:met_textColor="@color/colorPrimary"
+        app:met_textColorHint="@color/gray_light"
+        app:met_underlineColor="@color/gray_light" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context=".Activities.MainJobProgressActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl_parent_lyt_chat">
+
+        <LinearLayout
+            android:id="@+id/rl_coordinate_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".Activities.ChatActivity">
+
+            <RelativeLayout
+                android:id="@+id/toolbar_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary">
+
+                <ImageView
+                    android:id="@+id/img_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginEnd="15dp"
+                    android:contentDescription="@string/todo"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_close_black"
+                    android:visibility="visible"
+                    app:tint="@color/white"
+                    tools:ignore="content_description" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:text="@string/chat"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorWhite"
+                    android:visibility="visible"
+                    tools:ignore="RelativeOverlap" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/save_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/app_name"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/img_forward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center"
+                    android:contentDescription="@string/todo"
+                    android:padding="15sp"
+                    android:visibility="gone"
+                    tools:ignore="RtlSymmetry,content_description" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="5dp"
+                android:layout_weight="10">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/messagesRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollIndicators="end"
+                    android:scrollbars="vertical"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/message_text_view"
+                    tools:targetApi="m" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center|center_horizontal|center_vertical"
+                    android:gravity="center"
+                    android:text="@string/no_chat_available"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary_blue_light_alpha"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="5dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="10"
+                    android:background="@drawable/buttonshape">
+
+                    <com.instaguard.user.CustomViews.CustomEditText
+                        android:id="@+id/writeMessageEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:hint="@string/say_anything"
+                        android:maxLines="3"
+                        android:minLines="1"
+                        android:padding="3dp"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        app:met_baseColor="@color/black"
+                        app:met_clearButton="true"
+                        app:met_errorColor="@android:color/holo_red_dark"
+                        app:met_floatingLabel="none"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="false"
+                        app:met_hideUnderline="true"
+                        app:met_primaryColor="@color/black"
+                        app:met_textColor="@color/black"
+                        app:met_textColorHint="@color/black" />
+
+                </RelativeLayout>
+
+                <com.instaguard.user.CustomViews.CustomButton
+                    android:id="@+id/sendChatMessageButton1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:text="@string/send"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/sendChatMessageButton"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_circle_color"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:contentDescription="@string/todo"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_baseline_send_24"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_progress_bar_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@color/colorBlacktransperant"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/view2"
+                android:layout_width="120dp"
+                android:layout_height="110dp"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:shape="rectangle"
+                tools:ignore="UselessParent">
+
+                <ProgressBar
+                    android:id="@+id/tubiLoadingView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible"/>
+                <!--app:tubi_loading_toggle="@{observableObj.someBoolean}"-->
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

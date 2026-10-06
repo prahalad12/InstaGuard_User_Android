@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar_setting"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/bg_toolbar_gradient">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imgbtn_back"
+                style="@style/AppThemeToolBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_whitearrow" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/textView"
+                style="@style/AppThemeToolBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imgbtn_back"
+                android:layout_alignBottom="@+id/imgbtn_back"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="0dp"
+                android:layout_toStartOf="@+id/iv_menu_profile"
+                android:layout_toEndOf="@+id/imgbtn_back"
+                android:foregroundGravity="center"
+                android:gravity="center|start"
+                android:text="@string/settings_my_profile_title"
+                tools:ignore="MissingPrefix" />
+
+            <ImageView
+                android:id="@+id/iv_menu_profile"
+                style="@style/AppThemeToolBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imgbtn_back"
+                android:layout_alignBottom="@+id/imgbtn_back"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:contentDescription="@string/todo"
+                android:padding="5dp"
+                android:src="@drawable/ic_menu_vertical"
+                tools:ignore="RtlHardcoded" />
+        </RelativeLayout>
+    </android.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_setting"
+        android:background="@color/bg_gray_common">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <RelativeLayout
+                    android:id="@+id/imagearea"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/iv_backcover_user_profile"
+                        android:layout_width="fill_parent"
+                        android:layout_height="150.0dip"
+                        android:contentDescription="@string/todo"
+                        android:scaleType="fitXY"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150.0dip"
+                        android:background="#4bd6d6d6"
+                        android:contentDescription="@string/todo"
+                        android:visibility="gone" />
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/iv_user_profile"
+                        android:layout_width="150dip"
+                        android:layout_height="150dip"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="10dp"
+                        android:scaleType="fitXY"
+                        app:actualImageScaleType="none"
+                        app:failureImage="@mipmap/male"
+                        app:placeholderImage="@mipmap/male"
+                        app:placeholderImageScaleType="fitXY"
+                        app:roundedCornerRadius="0dp"
+                        app:roundingBorderColor="@color/colorPrimary" />
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:contentDescription="@string/todo"
+                        android:foregroundGravity="center"
+                        android:src="@mipmap/male"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_firstname_lastname"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_marginEnd="10dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <com.instaguard.user.CustomViews.CustomEditText
+                        android:id="@+id/edt_firstname"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:clickable="false"
+                        android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint="@string/settings_firstname_hint"
+                        android:imeOptions="actionNone"
+                        android:inputType="textWebEmailAddress"
+                        android:maxLength="25"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/black"
+                        app:met_hideUnderline="true"
+                        app:met_textColorHint="@color/black"
+                        app:met_underlineColor="@color/hintgray" />
+
+                    <com.instaguard.user.CustomViews.CustomEditText
+                        android:id="@+id/edt_lastname"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:clickable="false"
+                        android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint="@string/settings_lastname_hint"
+                        android:imeOptions="actionNone"
+                        android:inputType="textWebEmailAddress"
+                        android:maxLength="25"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/black"
+                        app:met_hideUnderline="true"
+                        app:met_textColorHint="@color/black"
+                        app:met_underlineColor="@color/hintgray" />
+                </LinearLayout>
+
+                <com.instaguard.user.CustomViews.CustomEditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:clickable="false"
+                    android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                    android:focusable="false"
+                    android:hint="@string/settings_email_hint"
+                    android:imeOptions="actionNone"
+                    android:inputType="textEmailAddress"
+                    android:paddingEnd="10dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelTextColor="@color/black"
+                    app:met_hideUnderline="true"
+                    app:met_textColorHint="@color/black"
+                    app:met_underlineColor="@color/hintgray"
+                    tools:ignore="RtlSymmetry" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+
+                    <com.instaguard.user.CustomViews.CustomEditText
+                        android:id="@+id/edt_country_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:clickable="false"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint="@string/settings_country_hint"
+                        android:imeOptions="actionNone"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:visibility="gone"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/colorPrimary"
+                        app:met_hideUnderline="true"
+                        app:met_iconPadding="0dp"
+                        app:met_textColorHint="@color/colorPrimary" />
+
+                    <com.instaguard.user.Helpers.CountryCode.CountryCodePicker
+                        android:id="@+id/ccp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:keyboardAutoPopOnSearch="false" />
+
+                    <com.instaguard.user.CustomViews.CustomEditText
+                        android:id="@+id/edt_mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:clickable="false"
+                        android:digits="0123456789"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint="@string/settings_mobile_hint"
+                        android:imeOptions="actionNone"
+                        android:inputType="phone"
+                        android:maxLength="15"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/black"
+                        app:met_hideUnderline="true"
+                        app:met_textColorHint="@color/black"
+                        app:met_underlineColor="@color/hintgray"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+
+                <com.instaguard.user.CustomViews.CustomEditText
+                    android:id="@+id/edt_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:clickable="false"
+                    android:digits="0123456789"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="@string/settings_language_hint"
+                    android:imeOptions="actionNone"
+                    android:maxLength="15"
+                    android:paddingEnd="10dp"
+                    android:singleLine="true"
+                    android:text="English"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelTextColor="@color/black"
+                    app:met_hideUnderline="true"
+                    app:met_textColorHint="@color/black"
+                    app:met_underlineColor="@color/hintgray"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.instaguard.user.CustomViews.CustomEditText
+                    android:id="@+id/edt_currency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:clickable="true"
+                    android:digits="0123456789"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="@string/settings_currency_hint"
+                    android:imeOptions="actionNone"
+                    android:maxLength="15"
+                    android:paddingEnd="10dp"
+                    android:singleLine="true"
+                    android:text="LKR"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelTextColor="@color/black"
+                    app:met_hideUnderline="true"
+                    app:met_textColorHint="@color/black"
+                    app:met_underlineColor="@color/hintgray"
+                    tools:ignore="RtlSymmetry" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+                    app:cardMaxElevation="8dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <com.instaguard.user.CustomViews.CustomButton
+                        android:id="@+id/btn_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:drawableStart="@drawable/ic_baseline_delete_24"
+                        android:drawablePadding="5dp"
+                        android:drawableTint="@color/white"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="@string/delete_my_account"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <FrameLayout
+        android:id="@+id/frame_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </FrameLayout>
+</RelativeLayout>

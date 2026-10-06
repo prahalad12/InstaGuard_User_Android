@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8AEDEDED">
+
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar_stripe"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/bg_toolbar_gradient"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imgbtn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_whitearrow" />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imgbtn_back"
+                android:layout_alignBottom="@+id/imgbtn_back"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="0dp"
+                android:layout_toStartOf="@+id/iv_menu_profile"
+                android:layout_toEndOf="@+id/imgbtn_back"
+                android:foregroundGravity="center"
+                android:gravity="center|start"
+                android:text="stripe"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                tools:ignore="MissingPrefix" />
+
+            <ImageView
+                android:id="@+id/iv_menu_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="top|right"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_menu_vertical"
+                android:contentDescription="@string/todo"
+                android:padding="5dp"
+                android:visibility="gone"
+                tools:ignore="RtlHardcoded" />
+        </RelativeLayout>
+    </android.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="15dp"
+        android:background="@drawable/bg_rect_border_white_elevation"
+        android:orientation="vertical"
+        android:padding="2dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_bal_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_balance_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="0sp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/dialog_balance_amount_your_current_job_balance_amount"
+                android:textColorHint="@color/black"
+                android:textSize="16sp"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_card_payment_details_list_area_card"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            android:padding="0.0dip"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/ll_current_charge_lyt_card"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_current_charge_label_card"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="start|center"
+                    android:text="@string/trip_summary_current_charger"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="#ff292929"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.instaguard.user.CustomViews.CustomEditText
+                        android:id="@+id/txt_current_charge_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:clickable="false"
+                        android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                        android:editable="false"
+                        android:focusable="false"
+                        android:gravity="end"
+                        android:hint="$ 70"
+                        android:imeOptions="actionNone"
+                        android:inputType="textWebEmailAddress"
+                        android:maxLength="25"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="12sp"
+                        app:met_floatingLabel="none"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/black"
+                        app:met_hideUnderline="true"
+                        app:met_textColorHint="@color/black" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_material_fee_lyt_card"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_material_fee_label_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="start|center"
+                    android:text="@string/trip_summary_material_fee"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="#ff292929"
+                    android:textSize="12sp" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.instaguard.user.CustomViews.CustomEditText
+                        android:id="@+id/edt_material_fee_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:clickable="false"
+                        android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                        android:editable="false"
+                        android:focusable="false"
+                        android:gravity="end"
+                        android:hint="$ 10"
+                        android:imeOptions="actionNone"
+                        android:inputType="textWebEmailAddress"
+                        android:maxLength="25"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="12sp"
+                        app:met_floatingLabel="none"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/black"
+                        app:met_hideUnderline="true"
+                        app:met_textColorHint="@color/black" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7.0dip"
+                android:orientation="vertical"
+                android:padding="0.0dip">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_agent_charge_label"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:gravity="start|center"
+                        android:text="@string/total_guard_cost"
+                        android:textAlignment="viewStart"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="#ff292929" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.instaguard.user.CustomViews.CustomEditText
+                            android:id="@+id/txt_card_balance_agent_charge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:clickable="false"
+                            android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                            android:editable="false"
+                            android:focusable="false"
+                            android:gravity="end"
+                            android:hint="$ 70"
+                            android:imeOptions="actionNone"
+                            android:inputType="textWebEmailAddress"
+                            android:maxLength="25"
+                            android:textSize="14sp"
+
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            app:met_floatingLabel="none"
+                            app:met_floatingLabelAlwaysShown="false"
+                            app:met_floatingLabelAnimating="true"
+                            app:met_floatingLabelTextColor="@color/colorPrimary"
+                            app:met_hideUnderline="true"
+                            app:met_textColorHint="@color/colorPrimary" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!--Total Day-->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7.0dip"
+                android:orientation="vertical"
+                android:padding="0.0dip">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_stripe_day_charge_label"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:gravity="start|center"
+                        android:text="Total Day Cost"
+                        android:textAlignment="viewStart"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="#ff292929" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.instaguard.user.CustomViews.CustomEditText
+                            android:id="@+id/txt_balance_card_day_charge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:clickable="false"
+                            android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                            android:editable="false"
+                            android:focusable="false"
+                            android:gravity="end"
+                            android:hint="$ 70"
+                            android:imeOptions="actionNone"
+                            android:inputType="textWebEmailAddress"
+                            android:maxLength="25"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            app:met_floatingLabel="none"
+                            android:textSize="14sp"
+
+                            app:met_floatingLabelAlwaysShown="false"
+                            app:met_floatingLabelAnimating="true"
+                            app:met_floatingLabelTextColor="@color/colorPrimary"
+                            app:met_hideUnderline="true"
+                            app:met_textColorHint="@color/colorPrimary" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            s
+
+            <LinearLayout
+                android:id="@+id/ll_misc_fee_lyt_card"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_misc_fee_label_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="start|center"
+                    android:text="@string/trip_summary_misc_fee"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="#ff292929"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.instaguard.user.CustomViews.CustomEditText
+                        android:id="@+id/edt_misc_fee_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:clickable="false"
+                        android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                        android:editable="false"
+                        android:focusable="false"
+                        android:gravity="end"
+                        android:hint="$ 70"
+                        android:imeOptions="actionNone"
+                        android:inputType="textWebEmailAddress"
+                        android:maxLength="25"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="12sp"
+                        app:met_floatingLabel="none"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/black"
+                        app:met_hideUnderline="true"
+                        app:met_textColorHint="@color/black" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_discount_lyt_card"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_discount_driver_label_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:gravity="start|center"
+                        android:text="@string/trip_summary_driver_discount"
+                        android:textAlignment="viewStart"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="#ff292929"
+                        android:textSize="12sp" />
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_marginStart="5.0dip"
+                        android:gravity="start|center"
+                        android:text="-"
+                        android:textAlignment="viewStart"
+                        android:textColor="#ff292929"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.instaguard.user.CustomViews.CustomEditText
+                            android:id="@+id/edt_discount_driver_card"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:clickable="false"
+                            android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                            android:editable="false"
+                            android:focusable="false"
+                            android:gravity="end"
+                            android:hint="-$ 10"
+                            android:imeOptions="actionNone"
+                            android:inputType="textWebEmailAddress"
+                            android:maxLength="25"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="12sp"
+                            app:met_floatingLabel="none"
+                            app:met_floatingLabelAlwaysShown="false"
+                            app:met_floatingLabelAnimating="true"
+                            app:met_floatingLabelTextColor="@color/black"
+                            app:met_hideUnderline="true"
+                            app:met_textColorHint="@color/black" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_distance_lyt_card"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_distance_driver_label_card"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:gravity="start|center"
+                        android:text="Total Distance"
+                        android:textAlignment="viewStart"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="#ff292929"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.instaguard.user.CustomViews.CustomEditText
+                            android:id="@+id/edt_distance_driver_card"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:clickable="false"
+                            android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                            android:editable="false"
+                            android:focusable="false"
+                            android:gravity="end"
+                            android:hint="--"
+                            android:imeOptions="actionNone"
+                            android:inputType="textWebEmailAddress"
+                            android:maxLength="50"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="12sp"
+                            app:met_floatingLabel="none"
+                            app:met_floatingLabelAlwaysShown="false"
+                            app:met_floatingLabelAnimating="true"
+                            app:met_floatingLabelTextColor="@color/black"
+                            app:met_hideUnderline="true"
+                            app:met_textColorHint="@color/black" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_final_total_lyt_card"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@android:color/darker_gray" />
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/tx_promo_code_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5.0dip"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Promo code apply"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_final_total_label_card"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:gravity="start|center"
+                        android:text="@string/trip_summary_total"
+                        android:textAlignment="viewStart"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="#ff292929"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.instaguard.user.CustomViews.CustomEditText
+                            android:id="@+id/txt_final_total_card"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:clickable="false"
+                            android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                            android:editable="false"
+                            android:focusable="false"
+                            android:gravity="end"
+                            android:hint="$ 100"
+                            android:imeOptions="actionNone"
+                            android:inputType="textWebEmailAddress"
+                            android:maxLength="25"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="12sp"
+                            app:met_floatingLabel="none"
+                            app:met_floatingLabelAlwaysShown="false"
+                            app:met_floatingLabelAnimating="true"
+                            app:met_floatingLabelTextColor="@color/black"
+                            app:met_hideUnderline="true"
+                            app:met_textColorHint="@color/black" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ll_final_wallet_card_lyt"
+                    android:orientation="horizontal">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_final_wallet_label_card"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:gravity="start|center"
+                        android:text="@string/my_wallet_title"
+                        android:textAlignment="viewStart"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="#ff292929"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.instaguard.user.CustomViews.CustomEditText
+                            android:id="@+id/txt_final_wallet_card"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:clickable="false"
+                            android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                            android:editable="false"
+                            android:focusable="false"
+                            android:gravity="end"
+                            android:hint="-$ 100"
+                            android:imeOptions="actionNone"
+                            android:inputType="textWebEmailAddress"
+                            android:maxLength="25"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="12sp"
+                            app:met_floatingLabel="none"
+                            app:met_floatingLabelAlwaysShown="false"
+                            app:met_floatingLabelAnimating="true"
+                            app:met_floatingLabelTextColor="@color/black"
+                            app:met_hideUnderline="true"
+                            app:met_textColorHint="@color/black" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@android:color/darker_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.instaguard.user.CustomViews.CustomTextView
+                        android:id="@+id/txt_final_bal_label_card"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:gravity="start|center"
+                        android:text="Balance"
+                        android:textAlignment="viewStart"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="#ff292929"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.instaguard.user.CustomViews.CustomEditText
+                            android:id="@+id/txt_final_bal_card"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:clickable="false"
+                            android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                            android:editable="false"
+                            android:focusable="false"
+                            android:gravity="end"
+                            android:hint="$ 100"
+                            android:imeOptions="actionNone"
+                            android:inputType="textWebEmailAddress"
+                            android:maxLength="25"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="12sp"
+                            app:met_floatingLabel="none"
+                            app:met_floatingLabelAlwaysShown="false"
+                            app:met_floatingLabelAnimating="true"
+                            app:met_floatingLabelTextColor="@color/black"
+                            app:met_hideUnderline="true"
+                            app:met_textColorHint="@color/black" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@android:color/darker_gray" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_stripe_payment_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ll_stripe_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical"
+                android:paddingBottom="5dp">
+
+                <com.instaguard.user.Helpers.Creditcard.fields.CreditCardModule
+                    android:id="@+id/credit_card_module"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:visibility="gone" />
+
+                <com.stripe.android.view.CardInputWidget
+                    android:id="@+id/credit_card_module_stripe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:padding="15dp" />
+
+            </LinearLayout>
+
+            <com.instaguard.user.CustomViews.CustomButton
+                android:id="@+id/pay_button"
+                android:layout_width="match_parent"
+                android:layout_height="45sp"
+                android:layout_below="@+id/ll_stripe_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_rect_filled_colorprimary"
+                android:gravity="center"
+                android:text="Pay"
+                android:textAllCaps="true"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="20sp"
+            android:gravity="start"
+            android:hint="for Demo use:- \n Creditcard: 4111 1111 1111 1111 \n mm/yy : 06/22 \n cvv :123"
+            android:textColorHint="@android:color/darker_gray"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_emptyview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:visibility="gone">
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/img_offer"
+            android:gravity="center"
+            android:text="@string/no_offers_found"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/img_offer"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_offers"
+            android:tint="@color/gray_light"
+            android:contentDescription="@string/todo" />
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_offer"
+            android:gravity="center"
+            android:text="@string/no_offers_yet_please_watch_this_space_in_few_days"
+            android:textAllCaps="false"
+            android:textColor="@color/gray_light" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_offers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:padding="10dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    <include
+        android:id="@+id/lyt_progressBar"
+        layout="@layout/layout_progress_bar"
+        android:visibility="gone" />
+
+</RelativeLayout>
+

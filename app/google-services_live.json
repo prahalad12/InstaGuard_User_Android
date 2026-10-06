@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "89712274963",
+    "firebase_url": "https://instaguard-live-default-rtdb.firebaseio.com",
+    "project_id": "instaguard-live",
+    "storage_bucket": "instaguard-live.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89712274963:android:f6183c9259fe0e9f4419e6",
+        "android_client_info": {
+          "package_name": "com.instaguard.provider"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRBcsY9i3R4JdGcOApNLiYopzpUBvqFXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89712274963:android:99ddbd975643122d4419e6",
+        "android_client_info": {
+          "package_name": "com.instaguard.user"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRBcsY9i3R4JdGcOApNLiYopzpUBvqFXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

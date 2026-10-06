@@ -1,0 +1,155 @@
+{
+  "project_info": {
+    "project_number": "729845483920",
+    "firebase_url": "https://instaguard-demo-default-rtdb.firebaseio.com",
+    "project_id": "instaguard-demo",
+    "storage_bucket": "instaguard-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729845483920:android:8b567de330c40eba420b15",
+        "android_client_info": {
+          "package_name": "com.instaGuard.provider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729845483920-n96er35l593brdle1a459vnfkfv870p1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5TXOYQnOAByMEUukukPRPEHTFIbjkSN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729845483920-n96er35l593brdle1a459vnfkfv870p1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "729845483920-3cl6p6evcjfv0bial13hka4glt6poknc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.instaguard.user"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729845483920:android:72116089ad150c6b420b15",
+        "android_client_info": {
+          "package_name": "com.instaGuard.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729845483920-n96er35l593brdle1a459vnfkfv870p1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5TXOYQnOAByMEUukukPRPEHTFIbjkSN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729845483920-n96er35l593brdle1a459vnfkfv870p1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "729845483920-3cl6p6evcjfv0bial13hka4glt6poknc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.instaguard.user"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729845483920:android:f075fb8a482d759e420b15",
+        "android_client_info": {
+          "package_name": "com.instaguard.provider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729845483920-n96er35l593brdle1a459vnfkfv870p1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5TXOYQnOAByMEUukukPRPEHTFIbjkSN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729845483920-n96er35l593brdle1a459vnfkfv870p1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "729845483920-3cl6p6evcjfv0bial13hka4glt6poknc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.instaguard.user"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729845483920:android:0472271fcb164e57420b15",
+        "android_client_info": {
+          "package_name": "com.instaguard.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729845483920-n96er35l593brdle1a459vnfkfv870p1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5TXOYQnOAByMEUukukPRPEHTFIbjkSN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729845483920-n96er35l593brdle1a459vnfkfv870p1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "729845483920-3cl6p6evcjfv0bial13hka4glt6poknc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.instaguard.user"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

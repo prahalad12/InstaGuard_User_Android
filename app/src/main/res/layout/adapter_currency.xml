@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:id="@+id/ll_pastjobs_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5.0dip"
+        android:layout_marginEnd="10.0dip"
+        android:layout_marginStart="10.0dip"
+        android:layout_marginTop="10.0dip"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:id="@+id/txt_Currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="5.0dip"
+            android:layout_marginEnd="5.0dip"
+            android:layout_marginTop="4.0dip"
+            android:layout_marginBottom="4.0dip"
+            android:layout_centerHorizontal="true"
+            android:padding="5dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text=" LKR "
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/img_active"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_alignTop="@+id/txt_Currency"
+            android:layout_alignBottom="@+id/txt_Currency"
+            android:layout_centerHorizontal="true"
+            android:layout_toEndOf="@+id/txt_Currency"
+            android:contentDescription="@string/todo"
+            android:padding="1.0dip"
+            android:src="@drawable/ic_greendot"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</LinearLayout>

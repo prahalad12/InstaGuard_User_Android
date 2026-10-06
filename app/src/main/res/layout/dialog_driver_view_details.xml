@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_parent_lyt_dialog_driver_view_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom_request"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/rl_requestBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:padding="15.0dip">
+
+            <com.instaguard.user.CustomViews.CustomButton
+                android:id="@+id/btn_next_driverview"
+                 android:layout_width="fill_parent"
+                android:layout_height="45sp"
+                android:background="@drawable/bg_rect_filled_colorprimary"
+                android:textColor="@color/white"
+                android:text="@string/driver_details_view_next"
+                android:layout_margin="5.0dip"
+                android:layout_marginBottom="10.0dip" />
+        </LinearLayout>
+
+        <com.instaguard.user.CustomViews.CustomTextView
+            android:id="@+id/driverDTxt"
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:layout_marginTop="5.0dip"
+            android:gravity="center"
+            android:text="@string/driver_details_view_passenger_detail"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="90.0dip">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/img_backcover"
+                android:layout_width="fill_parent"
+                android:layout_height="140.0dip"
+                android:background="@drawable/bg_toolbar_gradient"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/img_close"
+                android:layout_width="35.0dip"
+                android:layout_height="35.0dip"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                style="@style/AppThemeToolBar"
+                android:padding="5dp"
+                android:src="@drawable/ic_back_whitearrow"
+                android:contentDescription="@string/todo" />
+
+            <FrameLayout
+                android:id="@+id/frame_headerarea"
+                android:layout_width="fill_parent"
+                android:foreground="@drawable/bottom_shadow"
+                android:layout_below="@+id/img_backcover"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5.0dip"
+                    android:background="#ffffffff"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5.0dip"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="35.0dip"
+                            android:layout_height="35.0dip"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/hmarker" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:orientation="vertical">
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/txt_miles"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/frame_headerarea"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity=""
+                                android:layout_marginStart="3.0dip"
+                                android:layout_toEndOf="@+id/seperationLine"
+                                android:layout_weight="1.0"
+                                android:gravity="start"
+                                android:text="@string/driver_details_view__0_00miles"
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff131313"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:visibility="visible"
+                                />
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/txt_milesaway"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/frame_headerarea"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity=""
+                                android:layout_marginStart="3.0dip"
+                                android:layout_toEndOf="@+id/seperationLine"
+                                android:layout_weight="1.0"
+                                android:gravity="start"
+                                android:text="@string/driver_details_view_away"
+                                android:textAlignment="viewStart"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.instaguard.user.Helpers.RatingBar.SimpleRatingBar
+                                android:id="@+id/rb_provider_rating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:padding="2.0dip"
+                                app:srb_fillColor="@color/colorPrimary"
+                                app:srb_isIndicator="true"
+                                app:srb_numberOfStars="5"
+                                app:srb_starBackgroundColor="@color/white"
+                                app:srb_starSize="18.0sp"
+                                app:srb_stepSize="0.1"
+                                />
+
+
+                            <com.instaguard.user.CustomViews.CustomTextView
+                                android:id="@+id/txt_provider_review"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_gravity=""
+                                android:layout_marginStart="3.0dip"
+                                android:layout_weight="1.0"
+                                android:gravity="start"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10.0dip"
+                        android:orientation="vertical">
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txt_provider_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5.0dip"
+                            android:gravity="start"
+                            android:maxLines="1"
+                            android:padding="5.0dip"
+                            android:text=""
+                            android:textAlignment="viewStart"
+                            android:textColor="#ff131313"
+                            android:textSize="20sp"
+          />
+
+                        <com.instaguard.user.CustomViews.CustomTextView
+                            android:id="@+id/txt_provider_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5.0dip"
+                            android:gravity="start"
+                            android:maxLines="1"
+                            android:text=" "
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                           />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/txt_provider_information"
+                android:layout_marginTop="5.0dip"
+                android:paddingBottom="20.0dip">
+
+                <com.instaguard.user.CustomViews.CustomTextView
+                    android:id="@+id/txt_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity=""
+                    android:layout_marginStart="10.0dip"
+                    android:gravity="start"
+                    android:padding="10.0dip"
+                    android:text="@string/driver_details_view_driver_information"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff303030"
+                    android:textSize="16sp"
+                    android:visibility="visible"
+                    />
+            </ScrollView>
+
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/img_provider_profile"
+                android:layout_width="100.0dip"
+                android:layout_height="100.0dip"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20.0dip"
+                app:placeholderImage="@mipmap/male"
+                android:scaleType="fitXY"
+                app:actualImageScaleType="fitXY"
+                app:placeholderImageScaleType="fitXY"
+                />
+
+            <com.instaguard.user.CustomViews.CustomTextView
+                android:id="@+id/txt_provider_information"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/frame_headerarea"
+                android:layout_gravity=""
+                android:gravity="start"
+                android:padding="10.0dip"
+                android:text="@string/driver_information"
+                android:textAlignment="viewStart"
+                android:textColor="#ff131313"
+                android:textSize="18sp"
+                android:visibility="visible"
+                />
+        </RelativeLayout>
+    </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>
